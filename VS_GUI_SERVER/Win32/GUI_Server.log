@@ -1,5 +1,5 @@
-﻿Build started 06/03/2016 14:39:02.
-     1>Project "C:\Users\HP\Desktop\grasp_exp2_feedback_camera_ori - working\VS_GUI_SERVER\GUI_Server.vcxproj" on node 2 (build target(s)).
+﻿Build started 20/03/2016 17:44:48.
+     1>Project "C:\Users\HP\Documents\GitHub\feedback_experiment\VS_GUI_SERVER\GUI_Server.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Win32\GUI_Server.unsuccessfulbuild" because "AlwaysCreate" was specified.
        CustomBuild:
@@ -27,20 +27,20 @@
                  command-line arguments :  see previous definition of 'QT_LARGEFILE_SUPPORT'
          Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"release\\GUI_Server.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Qt\4.8.6\lib /LIBPATH:C:\Qt\4.8.6\lib C:\Qt\4.8.6\lib\qtmain.lib "c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\\Lib\WinInet.lib" C:\Qt\4.8.6\lib\Qt3Support4.lib C:\Qt\4.8.6\lib\QtGui4.lib C:\Qt\4.8.6\lib\QtNetwork4.lib C:\Qt\4.8.6\lib\QtCore4.lib comdlg32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Win32\GUI_Server.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Users\HP\Desktop\grasp_exp2_feedback_camera_ori - working\VS_GUI_SERVER\release\GUI_Server.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 Win32\CommonDS.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"release\\GUI_Server.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Qt\4.8.6\lib /LIBPATH:C:\Qt\4.8.6\lib C:\Qt\4.8.6\lib\qtmain.lib "c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\\Lib\WinInet.lib" C:\Qt\4.8.6\lib\Qt3Support4.lib C:\Qt\4.8.6\lib\QtGui4.lib C:\Qt\4.8.6\lib\QtNetwork4.lib C:\Qt\4.8.6\lib\QtCore4.lib comdlg32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Win32\GUI_Server.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Users\HP\Documents\GitHub\feedback_experiment\VS_GUI_SERVER\release\GUI_Server.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 Win32\CommonDS.obj
          Win32\keypad.obj
          Win32\main.obj
          Win32\moc_keypad.obj
          Win32\moc_siform.obj
          Win32\siform.obj "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" 
-         GUI_Server.vcxproj -> C:\Users\HP\Desktop\grasp_exp2_feedback_camera_ori - working\VS_GUI_SERVER\release\GUI_Server.exe
+         GUI_Server.vcxproj -> C:\Users\HP\Documents\GitHub\feedback_experiment\VS_GUI_SERVER\release\GUI_Server.exe
        Manifest:
          c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"release\\GUI_Server.exe;#1" /manifest Win32\GUI_Server.exe.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file "Win32\GUI_Server.unsuccessfulbuild".
          Touching "Win32\GUI_Server.lastbuildstate".
-     1>Done Building Project "C:\Users\HP\Desktop\grasp_exp2_feedback_camera_ori - working\VS_GUI_SERVER\GUI_Server.vcxproj" (build target(s)).
+     1>Done Building Project "C:\Users\HP\Documents\GitHub\feedback_experiment\VS_GUI_SERVER\GUI_Server.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:07.56
+Time Elapsed 00:00:07.30

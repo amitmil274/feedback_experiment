@@ -101,8 +101,10 @@ void* HapticsLoop(void* pUserData)
 	double Vgrip[2];
 	//static Vector3d oldPosistion[2];
 	static Vector3d oldVelocity[2];
-	Quaterniond qIncr[2],qCurr[2],qPrev[2];
-	Matrix3d xform[2];
+	Quaterniond qIncr[2],qCurr[2],qPrev[2],q_identity;
+	q_identity.Identity();
+
+	Matrix3d xform[2], rotMat;
 	Vector3d radius[2];
 	radius[0]<< 0.0, -0.02, 0.0;
 	int servo=0;
@@ -110,20 +112,12 @@ void* HapticsLoop(void* pUserData)
 	double d[3]={0,0,0};
 	// start haptic simulation
 	SimulationOn       = true;
-	//	SimulationFinished = false;
+	
 
 	// start with no force
 	dhdEnableForce (DHD_ON, devHandle);
 	dhdSetDevice(devHandle);
-	double oldGrip[7];
-	double oldFiltGrip[7];
-	double filtGrip=0;
-	float B[] = {0.0002196,  0.0006588,  0.0006588,  0.0002196};
-	float A[] = {1.0000,   2.7488, -2.5282,  0.7776};
-	int filtSize=4;
-	//float B[] = {0.0000000085,  0.0000000512,  0.0000001280,  0.0000001706, 0.0000001280, 0.0000000512, 0.0000000085};
-	//float A[] = {1.0000, -5.7572, 13.8155 , -17.6874, 12.7416, -4.8969, 0.7844};
-	//float A[] = {1.0000, 5.7572, -13.8155 , 17.6874, -12.7416, 4.8969, -0.7844};
+
 	while(SimulationOn)
 	{
 		servo++;
@@ -139,13 +133,10 @@ void* HapticsLoop(void* pUserData)
 		Position[0] << x,y,z;
 		dhdGetLinearVelocity(&vx,&vy,&vz);
 		Velocity[0] << vx,vy,vz;		
-		//Position *=0.001;	// mm->m
-		//	Velocity *=0.001;	// mm/s->m/s
 		// GRIPPER POS and VELOCITY
 		dhdGetGripperAngleRad(&Gripper[0]);
 		dhdGetGripperGap(&Gripper[1]);
 		//cout<<Gripper[1]<<endl;
-
 		d[0]=x-zerobase.x();
 		d[1]=y-zerobase.y();
 		d[2]=z-zerobase.z();
@@ -165,12 +156,6 @@ void* HapticsLoop(void* pUserData)
 		// DAVINCI LIKE GRIPPER FORCE FEEDBACK
 		int gripFB=2;
 		int gripType;
-		double gripForceFeedback= getGripForce(gripType);
-		
-		double gripForce=0;
-		// END OF POSITION EXCHANGE GRIPPER FORCE FEEDBACK
-		/*if (dhdSetForceAndGripperForce (K*-d[0], K*-d[1], K*-d[2],gripForce) < DHD_NO_ERROR) 
-		printf ("error: cannot set force (%s)\n", dhdErrorGetLastStr());*/
 		dhdGetGripperAngularVelocityRad(&Vgrip[0]);
 		dhdGetGripperLinearVelocity(&Vgrip[1]);
 
@@ -181,17 +166,20 @@ void* HapticsLoop(void* pUserData)
 		xform[0]  << r[0][0], r[0][1], r[0][2],
 			r[1][0], r[1][1], r[1][2],
 			r[2][0], r[2][1], r[2][2];
-		Matrix3d xinv;
+		 
+		Matrix3d sigma2ITP;
 		if (hapticData.enable_orientation)
-			xinv<< -1 , 0 , 0 ,
+			sigma2ITP<< -1 , 0 , 0 ,
 			0 ,1 , 0,
 			0, 0, -1;
 		else
-			xinv<< 0 , 0 , 0 ,
+			sigma2ITP<< 0 , 0 , 0 ,
 			0 ,0 , 0,
 			0, 0, 0;
-		qPrev[0]=qCurr[0];
-		qCurr[0]=xinv*Quaterniond(xform[0]);
+		xform[0].applyOnTheRight(sigma2ITP);
+		
+		qCurr[0]=Quaterniond(xform[0]);
+
 
 
 		hapticData.position[0]=Position[0];
@@ -201,7 +189,12 @@ void* HapticsLoop(void* pUserData)
 		hapticData.vgrip[0]=Vgrip[0];
 		hapticData.vgrip[1]=Vgrip[1];
 		hapticData.orientation[0]=Orientation[0];		
-
+		gripType=2;
+		double gripForceFeedback= hapticData.getGripForce(gripType);
+	/*				if (dhdSetForceAndGripperForce (K*-d[0], K*-d[1], K*-d[2],gripForceFeedback) < DHD_NO_ERROR) 
+				printf ("error: cannot set force (%s)\n", dhdErrorGetLastStr());*/
+		//gripForceFeedback=0;
+		K=0;
 		if (WriteToFile)
 		{
 			filemaster.position=Position[0];
@@ -210,18 +203,19 @@ void* HapticsLoop(void* pUserData)
 			filemaster.vgrip=Vgrip[0];
 			filemaster.orientation=Orientation[0];
 		}
+		ravenPosition[0].x()=(-ravenData.py[0]);
+				ravenPosition[0].y()=(-ravenData.pz[0]);
+				ravenPosition[0].z()=ravenData.px[0];
 		// COMMUNICATION
 		if( comm.Check_Flag(FPEDAL_RIGHT) && comm.Check_Flag(BASIC_START) )
 		{
-			if (dhdSetForceAndGripperForce (K*-d[0], K*-d[1], K*-d[2],KG*filtGrip) < DHD_NO_ERROR) 
+			if (dhdSetForceAndGripperForce (K*-d[0], K*-d[1], K*-d[2],gripForceFeedback) < DHD_NO_ERROR) 
 				printf ("error: cannot set force (%s)\n", dhdErrorGetLastStr());
 			if (prevpedal!=footpedal)
 			{
 				firstraven=false;
-				ravenPosition[0].x()=(-ravenData.py[0]);
-				ravenPosition[0].y()=(-ravenData.pz[0]);
-				ravenPosition[0].z()=ravenData.px[0];
-				deltaPosition[0]= (Position[0]-zerobase)-ravenPosition[0];
+				
+				deltaPosition[0]= scale_pos*(Position[0]-zerobase)-ravenPosition[0];
 				continue;
 			}
 
@@ -231,11 +225,14 @@ void* HapticsLoop(void* pUserData)
 				dPosition[0] = scale_pos*(Position[0]-zerobase) - deltaPosition[0];
 			else
 				dPosition[0] << scale_pos*(Position[0]-zerobase); //0,0,0;
-			qIncr[0]=qCurr[0]*qPrev[0].inverse();
+			if (hapticData.enable_orientation)
+			qIncr[0]=qPrev[0].inverse() * qCurr[0];
+			else
+				qIncr[0]=q_identity;
 			//qIncr[0]=qCurr[0]; //TRYING TO IMPLEMENT ABSOLUTE
 			if (hapticData.enable_gripper)
 			{
-				Gripper[0]-=3*M_PI/180;
+				//Gripper[0]-=3*M_PI/180;
 				Gripper[0]*=1000*scale_grip;
 			}
 			else
@@ -243,17 +240,23 @@ void* HapticsLoop(void* pUserData)
 		} 
 		else 
 		{
-			ravenPosition[0].x()=(-ravenData.py[0]);
-			ravenPosition[0].y()=(-ravenData.pz[0]);
-			ravenPosition[0].z()=ravenData.px[0];
+			if (dhdSetForceAndGripperForce (0,0,0,0) < DHD_NO_ERROR) 
+				printf ("error: cannot set force (%s)\n", dhdErrorGetLastStr());
+			//ravenPosition[0].x()=(-ravenData.py[0]);
+			//ravenPosition[0].y()=(-ravenData.pz[0]);
+			//ravenPosition[0].z()=ravenData.px[0];
 			indexing=true;
 			dPosition[0] << ravenPosition[0];
 			//dPosition[0]<< 0 , 0 ,0 ;
-			qIncr[0]=qCurr[0]*qPrev[0].inverse();
-			Gripper[0]-=3*M_PI/180;
+			qIncr[0]=q_identity;
+			//Gripper[0]-=3*M_PI/180;
 			Gripper[0]*=1000*scale_grip;
 
 		}
+		/*cout.setf(ios::fixed,ios::floatfield);
+			cout.precision(3);
+			cout << '\r' << "x: " <<std::setw(5)<< dPosition[0].x() << " y: "<<std::setw(5) << dPosition[0].y() << " z: "<<std::setw(5)<< dPosition[0].z() << flush;*/
+		qPrev[0] = qCurr[0];
 
 		rl2sui = 3-comm.Check_Flag(FPEDAL_RIGHT);
 
@@ -387,9 +390,18 @@ void Ori_feedback(Eigen::Vector3d ori)
 	//	dhdSetForceAndTorque(0,0,0,force.x(),force.y(),force.z());
 	//}
 }
-
+	double oldGrip[7];
+	double oldFiltGrip[7];
+	double filtGrip=0;
+	double oldVel[7];
+	double oldFiltVel[7];
+	double filtVel=0;
+	float B[] = {0.0002196,  0.0006588,  0.0006588,  0.0002196};
+	float A[] = {1.0000,   2.7488, -2.5282,  0.7776};
+	int filtSize=4;
 double HapticData::getGripForce(int gripType)
 {
+	double gripForce=0;
 	int KG;
 	if (gripType==1)
 		{
@@ -400,9 +412,9 @@ double HapticData::getGripForce(int gripType)
 				KG=4/gripper[0];
 			else
 				KG=20;
-			if (dhdSetForceAndGripperForce (K*-d[0], K*-d[1], K*-d[2],(0.5-gripper[0])*KG) < DHD_NO_ERROR) 
-				printf ("error: cannot set force (%s)\n", dhdErrorGetLastStr());
+
 			// END OF DAVINCI LIKE GRIPPER FORCE FEEDBACK
+			gripForce=(0.5-gripper[0])*KG;
 		}
 		else
 		{
@@ -414,7 +426,8 @@ double HapticData::getGripForce(int gripType)
 			tmpGrip*=scale_grip;
 			tmpVel*=scale_grip;
 			double gripDiff=-(tmpGrip-ravenData.grasp[0]);
-			double velDiff=-(tmpVel-ravenData.grasp_vel[0]);
+			//double velDiff=-(tmpVel-ravenData.grasp_vel[0]);
+			double velDiff=-(tmpVel);
 
 			if (!filterRdy)
 			{
@@ -456,10 +469,11 @@ double HapticData::getGripForce(int gripType)
 			//KG=0;
 			/*if (filtGrip>3)
 				filterRdy=false;*/
-			double Kp = 0.1 , Kd = 0.002;
+			double Kp = 1000 , Kd = 0.002;
 			double gripForce = Kp*filtGrip+Kd*filtVel;
-			/*cout.setf(ios::fixed,ios::floatfield);
+			cout.setf(ios::fixed,ios::floatfield);
 			cout.precision(3);
-			cout << '\r' << "GF: " <<std::setw(5)<< filtGrip << " diff: "<<std::setw(5) << tmpGrip << " raven: "<<std::setw(5)<< ravenData.grasp[0] << flush;*/
+			cout << '\r' << "GF: " <<std::setw(5)<< filtGrip << " diff: "<<std::setw(5) << tmpGrip << " raven: "<<std::setw(5)<< ravenData.grasp[0] << flush;
 		}
+	return gripForce;
 }

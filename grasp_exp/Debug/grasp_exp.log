@@ -1,165 +1,188 @@
-﻿Build started 20/03/2016 16:31:48.
+﻿Build started 20/03/2016 17:49:04.
      1>Project "C:\Users\HP\Documents\GitHub\feedback_experiment\grasp_exp\grasp_exp.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Touching "Debug\grasp_exp.unsuccessfulbuild".
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Program Files\Point Grey Research\FlyCapture2\include" /IC:\opencv\build\include /I"C:\Program Files\Force Dimension\sdk-3.5.3\include" /I"C:\Program Files\Force Dimension\sdk-3.5.3\external\Eigen" /I"C:\Program Files\Force Dimension\sdk-3.5.3\external\freeglut\include" /IC:\OpenCV\Build\x64\vc10\include /I"C:\Numerical Recipes\Cpp211\cpp\otherm" /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\VS_GUI_SERVER\CommonDS.cpp FileHandle.cpp FrameRateCounter.cpp Haptic.cpp maingrasp.cpp PracticalSocket\PracticalSocket.cpp protocol.cpp sigma_comm.cpp Timer.cpp VisionThread.cpp VisionThread2.cpp
-         VisionThread2.cpp
-     1>VisionThread2.cpp(83): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>VisionThread2.cpp(83): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>VisionThread2.cpp(90): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>VisionThread2.cpp(90): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>VisionThread2.cpp(91): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>VisionThread2.cpp(91): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>VisionThread2.cpp(92): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>VisionThread2.cpp(92): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>VisionThread2.cpp(93): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>VisionThread2.cpp(93): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
-     1>VisionThread2.cpp(71): warning C4101: 'wy' : unreferenced local variable
-     1>VisionThread2.cpp(237): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>VisionThread2.cpp(237): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>VisionThread2.cpp(237): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>VisionThread2.cpp(510): warning C4244: '=' : conversion from 'double' to 'unsigned int', possible loss of data
-     1>VisionThread2.cpp(511): warning C4244: '=' : conversion from 'double' to 'unsigned int', possible loss of data
-         VisionThread.cpp
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(45): warning C4244: 'return' : conversion from 'const double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(928): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(929): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(930): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(931): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\FileHandle.h(28): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\protocol.h(35): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\protocol.h(39): warning C4305: '=' : truncation from 'double' to 'float'
-     1>VisionThread.cpp(109): warning C4244: 'initializing' : conversion from 'double' to 'unsigned int', possible loss of data
-     1>VisionThread.cpp(115): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>VisionThread.cpp(140): warning C4244: 'initializing' : conversion from 'double' to 'unsigned int', possible loss of data
-     1>VisionThread.cpp(212): warning C4244: 'initializing' : conversion from 'double' to 'unsigned int', possible loss of data
-         Timer.cpp
-         sigma_comm.cpp
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Haptic.h(13): warning C4305: '=' : truncation from 'double' to 'float'
-     1>sigma_comm.cpp(303): warning C4101: 'nfound' : unreferenced local variable
-     1>sigma_comm.cpp(378): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>sigma_comm.cpp(379): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-         protocol.cpp
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Protocol.h(35): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Protocol.h(39): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(45): warning C4244: 'return' : conversion from 'const double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(928): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(929): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(930): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(931): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\FileHandle.h(28): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Haptic.h(13): warning C4305: '=' : truncation from 'double' to 'float'
-     1>protocol.cpp(95): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>protocol.cpp(136): warning C4305: '=' : truncation from 'double' to 'float'
-     1>protocol.cpp(144): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>protocol.cpp(154): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>protocol.cpp(168): warning C4305: '=' : truncation from 'double' to 'float'
-     1>protocol.cpp(181): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>protocol.cpp(247): warning C4305: '=' : truncation from 'double' to 'float'
-     1>protocol.cpp(255): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-         PracticalSocket.cpp
-         maingrasp.cpp
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(45): warning C4244: 'return' : conversion from 'const double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(928): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(929): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(930): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(931): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\FileHandle.h(28): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Protocol.h(35): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Protocol.h(39): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Haptic.h(13): warning C4305: '=' : truncation from 'double' to 'float'
-         Haptic.cpp
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Haptic.h(13): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(45): warning C4244: 'return' : conversion from 'const double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(928): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(929): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(930): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(931): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\FileHandle.h(28): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Protocol.h(35): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Protocol.h(39): warning C4305: '=' : truncation from 'double' to 'float'
-     1>Haptic.cpp(121): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>Haptic.cpp(121): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>Haptic.cpp(121): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>Haptic.cpp(121): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>Haptic.cpp(122): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>Haptic.cpp(122): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>Haptic.cpp(122): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>Haptic.cpp(160): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>Haptic.cpp(168): error C3861: 'getGripForce': identifier not found
-     1>Haptic.cpp(264): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
-     1>Haptic.cpp(396): error C2143: syntax error : missing ']' before 'constant'
-     1>Haptic.cpp(396): error C2059: syntax error : ']'
-     1>Haptic.cpp(396): error C2059: syntax error : ')'
-     1>Haptic.cpp(396): error C2059: syntax error : 'constant'
-     1>Haptic.cpp(396): error C2059: syntax error : ')'
-     1>Haptic.cpp(398): error C2181: illegal else without matching if
-     1>Haptic.cpp(398): error C2065: 'Gripper' : undeclared identifier
-     1>Haptic.cpp(399): error C2065: 'KG' : undeclared identifier
-     1>Haptic.cpp(399): error C2065: 'Gripper' : undeclared identifier
-     1>Haptic.cpp(401): error C2065: 'KG' : undeclared identifier
-     1>Haptic.cpp(402): error C2065: 'K' : undeclared identifier
-     1>Haptic.cpp(402): error C2065: 'd' : undeclared identifier
-     1>Haptic.cpp(402): error C2065: 'K' : undeclared identifier
-     1>Haptic.cpp(402): error C2065: 'd' : undeclared identifier
-     1>Haptic.cpp(402): error C2065: 'K' : undeclared identifier
-     1>Haptic.cpp(402): error C2065: 'd' : undeclared identifier
-     1>Haptic.cpp(402): error C2065: 'Gripper' : undeclared identifier
-     1>Haptic.cpp(402): error C2065: 'KG' : undeclared identifier
-     1>Haptic.cpp(410): error C2065: 'Gripper' : undeclared identifier
-     1>Haptic.cpp(418): error C2065: 'filtSize' : undeclared identifier
-     1>Haptic.cpp(420): error C2065: 'oldGrip' : undeclared identifier
-     1>Haptic.cpp(421): error C2065: 'oldFiltGrip' : undeclared identifier
-     1>Haptic.cpp(427): error C2065: 'filtGrip' : undeclared identifier
-     1>Haptic.cpp(427): error C2065: 'B' : undeclared identifier
-     1>Haptic.cpp(428): error C2065: 'filtSize' : undeclared identifier
-     1>Haptic.cpp(429): error C2065: 'filtGrip' : undeclared identifier
-     1>Haptic.cpp(429): error C2065: 'B' : undeclared identifier
-     1>Haptic.cpp(429): error C2065: 'oldGrip' : undeclared identifier
-     1>Haptic.cpp(429): error C2065: 'A' : undeclared identifier
-     1>Haptic.cpp(429): error C2065: 'oldFiltGrip' : undeclared identifier
-     1>Haptic.cpp(430): error C2065: 'filtSize' : undeclared identifier
-     1>Haptic.cpp(432): error C2065: 'oldGrip' : undeclared identifier
-     1>Haptic.cpp(432): error C2065: 'oldGrip' : undeclared identifier
-     1>Haptic.cpp(433): error C2065: 'oldFiltGrip' : undeclared identifier
-     1>Haptic.cpp(433): error C2065: 'oldFiltGrip' : undeclared identifier
-     1>Haptic.cpp(435): error C2065: 'oldGrip' : undeclared identifier
-     1>Haptic.cpp(436): error C2065: 'oldFiltGrip' : undeclared identifier
-     1>Haptic.cpp(436): error C2065: 'filtGrip' : undeclared identifier
-     1>Haptic.cpp(442): error C2065: 'KG' : undeclared identifier
-     1>Haptic.cpp(451): error C2065: 'filtGrip' : undeclared identifier
-         FrameRateCounter.cpp
-         FileHandle.cpp
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(45): warning C4244: 'return' : conversion from 'const double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(928): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(929): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(930): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(931): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\FileHandle.h(28): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Haptic.h(13): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Protocol.h(35): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Protocol.h(39): warning C4305: '=' : truncation from 'double' to 'float'
-     1>FileHandle.cpp(21): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>FileHandle.cpp(30): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>FileHandle.cpp(31): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
-     1>FileHandle.cpp(37): warning C4101: 'i' : unreferenced local variable
-     1>FileHandle.cpp(51): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>FileHandle.cpp(52): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>FileHandle.cpp(53): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
-     1>FileHandle.cpp(54): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
-         CommonDS.cpp
-         Generating Code...
-     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\visionthread2.cpp(138): warning C4700: uninitialized local variable 'wy' used
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\HP\Documents\GitHub\feedback_experiment\Debug\grasp_exp.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\Point Grey Research\FlyCapture2\lib64" /LIBPATH:C:\opencv\build\x64\vc10\lib /LIBPATH:"C:\Program Files\Force Dimension\sdk-3.5.3\lib" /LIBPATH:"C:\Program Files\Force Dimension\sdk-3.5.3\external\freeglut\lib\\Win32\Debug" /LIBPATH:"C:\Program Files\Force Dimension\sdk-3.5.3\external\freeglut\lib\VS2010\Debug\Win32" FlyCapture2d_v100.lib drdms.lib freeglut.lib dhdms.lib WS2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\grasp_exp.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\HP\Documents\GitHub\feedback_experiment\Debug\grasp_exp.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\HP\Documents\GitHub\feedback_experiment\Debug\grasp_exp.lib" /MACHINE:X86 Debug\grasp_exp.exe.embed.manifest.res
+         Debug\CommonDS.obj
+         Debug\FileHandle.obj
+         Debug\FrameRateCounter.obj
+         Debug\Haptic.obj
+         Debug\maingrasp.obj
+         Debug\PracticalSocket.obj
+         Debug\protocol.obj
+         Debug\sigma_comm.obj
+         Debug\Timer.obj
+         Debug\VisionThread.obj
+         Debug\VisionThread2.obj
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: virtual __thiscall FlyCapture2::Error::~Error(void)" (__imp_??1Error@FlyCapture2@@UAE@XZ) referenced in function "void __cdecl PrintError(class FlyCapture2::Error)" (?PrintError@@YAXVError@FlyCapture2@@@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: virtual __thiscall FlyCapture2::Error::~Error(void)" (__imp_??1Error@FlyCapture2@@UAE@XZ)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: virtual void __thiscall FlyCapture2::Error::PrintErrorTrace(void)const " (__imp_?PrintErrorTrace@Error@FlyCapture2@@UBEXXZ) referenced in function "void __cdecl PrintError(class FlyCapture2::Error)" (?PrintError@@YAXVError@FlyCapture2@@@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: virtual void __thiscall FlyCapture2::Error::PrintErrorTrace(void)const " (__imp_?PrintErrorTrace@Error@FlyCapture2@@UBEXXZ)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "void __cdecl cv::putText(class cv::Mat &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class cv::Point_<int>,int,double,class cv::Scalar_<double>,int,int,bool)" (?putText@cv@@YAXAAVMat@1@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$Point_@H@1@HNV?$Scalar_@N@1@HH_N@Z) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "void __cdecl cv::rectangle(class cv::Mat &,class cv::Point_<int>,class cv::Point_<int>,class cv::Scalar_<double> const &,int,int,int)" (?rectangle@cv@@YAXAAVMat@1@V?$Point_@H@1@1ABV?$Scalar_@N@1@HHH@Z) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "class cv::Size_<int> __cdecl cv::getTextSize(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int,double,int,int *)" (?getTextSize@cv@@YA?AV?$Size_@H@1@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HNHPAH@Z) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol _cvSetWindowProperty referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "int __cdecl cv::waitKey(int)" (?waitKey@cv@@YAHH@Z) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "void __cdecl cv::imshow(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class cv::_InputArray const &)" (?imshow@cv@@YAXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV_InputArray@1@@Z) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "void __cdecl cv::resize(class cv::_InputArray const &,class cv::_OutputArray const &,class cv::Size_<int>,double,double,int)" (?resize@cv@@YAXABV_InputArray@1@ABV_OutputArray@1@V?$Size_@H@1@NNH@Z) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "public: __thiscall cv::_InputArray::_InputArray(class cv::Mat const &)" (??0_InputArray@cv@@QAE@ABVMat@1@@Z) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "public: __thiscall cv::_OutputArray::_OutputArray(class cv::Mat &)" (??0_OutputArray@cv@@QAE@AAVMat@1@@Z) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "public: void __thiscall cv::Mat::push_back(class cv::Mat const &)" (?push_back@Mat@cv@@QAEXABV12@@Z) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: virtual unsigned char * __thiscall FlyCapture2::Image::GetData(void)" (__imp_?GetData@Image@FlyCapture2@@UAEPAEXZ) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: virtual unsigned char * __thiscall FlyCapture2::Image::GetData(void)" (__imp_?GetData@Image@FlyCapture2@@UAEPAEXZ)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: virtual unsigned int __thiscall FlyCapture2::Image::GetCols(void)const " (__imp_?GetCols@Image@FlyCapture2@@UBEIXZ) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: virtual unsigned int __thiscall FlyCapture2::Image::GetRows(void)const " (__imp_?GetRows@Image@FlyCapture2@@UBEIXZ) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: virtual unsigned int __thiscall FlyCapture2::Image::GetReceivedDataSize(void)const " (__imp_?GetReceivedDataSize@Image@FlyCapture2@@UBEIXZ) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Image::Convert(enum FlyCapture2::PixelFormat,class FlyCapture2::Image *)const " (__imp_?Convert@Image@FlyCapture2@@UBE?AVError@2@W4PixelFormat@2@PAV12@@Z) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Image::Convert(enum FlyCapture2::PixelFormat,class FlyCapture2::Image *)const " (__imp_?Convert@Image@FlyCapture2@@UBE?AVError@2@W4PixelFormat@2@PAV12@@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: virtual __thiscall FlyCapture2::Image::~Image(void)" (__imp_??1Image@FlyCapture2@@UAE@XZ) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: virtual __thiscall FlyCapture2::Image::~Image(void)" (__imp_??1Image@FlyCapture2@@UAE@XZ)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __thiscall FlyCapture2::Image::Image(void)" (__imp_??0Image@FlyCapture2@@QAE@XZ) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall FlyCapture2::Image::Image(void)" (__imp_??0Image@FlyCapture2@@QAE@XZ)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: virtual class FlyCapture2::Error __thiscall FlyCapture2::BusManager::GetCameraFromIndex(unsigned int,class FlyCapture2::PGRGuid *)" (__imp_?GetCameraFromIndex@BusManager@FlyCapture2@@UAE?AVError@2@IPAVPGRGuid@2@@Z) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: virtual class FlyCapture2::Error __thiscall FlyCapture2::BusManager::GetCameraFromIndex(unsigned int,class FlyCapture2::PGRGuid *)" (__imp_?GetCameraFromIndex@BusManager@FlyCapture2@@UAE?AVError@2@IPAVPGRGuid@2@@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __thiscall FlyCapture2::Camera::Camera(void)" (__imp_??0Camera@FlyCapture2@@QAE@XZ) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall FlyCapture2::Camera::Camera(void)" (__imp_??0Camera@FlyCapture2@@QAE@XZ)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol _cvNamedWindow referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: virtual __thiscall FlyCapture2::BusManager::~BusManager(void)" (__imp_??1BusManager@FlyCapture2@@UAE@XZ) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: virtual __thiscall FlyCapture2::BusManager::~BusManager(void)" (__imp_??1BusManager@FlyCapture2@@UAE@XZ)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __thiscall FlyCapture2::Error::Error(class FlyCapture2::Error const &)" (__imp_??0Error@FlyCapture2@@QAE@ABV01@@Z) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall FlyCapture2::Error::Error(class FlyCapture2::Error const &)" (__imp_??0Error@FlyCapture2@@QAE@ABV01@@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: virtual class FlyCapture2::Error __thiscall FlyCapture2::BusManager::GetNumOfCameras(unsigned int *)" (__imp_?GetNumOfCameras@BusManager@FlyCapture2@@UAE?AVError@2@PAI@Z) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: virtual class FlyCapture2::Error __thiscall FlyCapture2::BusManager::GetNumOfCameras(unsigned int *)" (__imp_?GetNumOfCameras@BusManager@FlyCapture2@@UAE?AVError@2@PAI@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __thiscall FlyCapture2::BusManager::BusManager(void)" (__imp_??0BusManager@FlyCapture2@@QAE@XZ) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall FlyCapture2::BusManager::BusManager(void)" (__imp_??0BusManager@FlyCapture2@@QAE@XZ)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __thiscall FlyCapture2::Error::Error(void)" (__imp_??0Error@FlyCapture2@@QAE@XZ) referenced in function "void * __cdecl visionrun(void *)" (?visionrun@@YAPAXPAX@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: __thiscall FlyCapture2::Error::Error(void)" (__imp_??0Error@FlyCapture2@@QAE@XZ)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::Connect(class FlyCapture2::PGRGuid *)" (?Connect@Camera@FlyCapture2@@UAE?AVError@2@PAVPGRGuid@2@@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::Connect(class FlyCapture2::PGRGuid *)" (?Connect@Camera@FlyCapture2@@UAE?AVError@2@PAVPGRGuid@2@@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::Disconnect(void)" (?Disconnect@Camera@FlyCapture2@@UAE?AVError@2@XZ)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::Disconnect(void)" (?Disconnect@Camera@FlyCapture2@@UAE?AVError@2@XZ) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual bool __thiscall FlyCapture2::Camera::IsConnected(void)" (?IsConnected@Camera@FlyCapture2@@UAE_NXZ)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual bool __thiscall FlyCapture2::Camera::IsConnected(void)" (?IsConnected@Camera@FlyCapture2@@UAE_NXZ) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetCallback(void (__cdecl*)(class FlyCapture2::Image *,void const *),void const *)" (?SetCallback@Camera@FlyCapture2@@UAE?AVError@2@P6AXPAVImage@2@PBX@Z1@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetCallback(void (__cdecl*)(class FlyCapture2::Image *,void const *),void const *)" (?SetCallback@Camera@FlyCapture2@@UAE?AVError@2@P6AXPAVImage@2@PBX@Z1@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::StartCapture(void (__cdecl*)(class FlyCapture2::Image *,void const *),void const *)" (?StartCapture@Camera@FlyCapture2@@UAE?AVError@2@P6AXPAVImage@2@PBX@Z1@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::StartCapture(void (__cdecl*)(class FlyCapture2::Image *,void const *),void const *)" (?StartCapture@Camera@FlyCapture2@@UAE?AVError@2@P6AXPAVImage@2@PBX@Z1@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::RetrieveBuffer(class FlyCapture2::Image *)" (?RetrieveBuffer@Camera@FlyCapture2@@UAE?AVError@2@PAVImage@2@@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::RetrieveBuffer(class FlyCapture2::Image *)" (?RetrieveBuffer@Camera@FlyCapture2@@UAE?AVError@2@PAVImage@2@@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::StopCapture(void)" (?StopCapture@Camera@FlyCapture2@@UAE?AVError@2@XZ)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::StopCapture(void)" (?StopCapture@Camera@FlyCapture2@@UAE?AVError@2@XZ) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::WaitForBufferEvent(class FlyCapture2::Image *,unsigned int)" (?WaitForBufferEvent@Camera@FlyCapture2@@UAE?AVError@2@PAVImage@2@I@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::WaitForBufferEvent(class FlyCapture2::Image *,unsigned int)" (?WaitForBufferEvent@Camera@FlyCapture2@@UAE?AVError@2@PAVImage@2@I@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetUserBuffers(unsigned char * const,int,int)" (?SetUserBuffers@Camera@FlyCapture2@@UAE?AVError@2@QAEHH@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetUserBuffers(unsigned char * const,int,int)" (?SetUserBuffers@Camera@FlyCapture2@@UAE?AVError@2@QAEHH@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetConfiguration(struct FlyCapture2::FC2Config *)" (?GetConfiguration@Camera@FlyCapture2@@UAE?AVError@2@PAUFC2Config@2@@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetConfiguration(struct FlyCapture2::FC2Config *)" (?GetConfiguration@Camera@FlyCapture2@@UAE?AVError@2@PAUFC2Config@2@@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetConfiguration(struct FlyCapture2::FC2Config const *)" (?SetConfiguration@Camera@FlyCapture2@@UAE?AVError@2@PBUFC2Config@2@@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetConfiguration(struct FlyCapture2::FC2Config const *)" (?SetConfiguration@Camera@FlyCapture2@@UAE?AVError@2@PBUFC2Config@2@@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetCameraInfo(struct FlyCapture2::CameraInfo *)" (?GetCameraInfo@Camera@FlyCapture2@@UAE?AVError@2@PAUCameraInfo@2@@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetCameraInfo(struct FlyCapture2::CameraInfo *)" (?GetCameraInfo@Camera@FlyCapture2@@UAE?AVError@2@PAUCameraInfo@2@@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetPropertyInfo(struct FlyCapture2::PropertyInfo *)" (?GetPropertyInfo@Camera@FlyCapture2@@UAE?AVError@2@PAUPropertyInfo@2@@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetPropertyInfo(struct FlyCapture2::PropertyInfo *)" (?GetPropertyInfo@Camera@FlyCapture2@@UAE?AVError@2@PAUPropertyInfo@2@@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetProperty(struct FlyCapture2::Property *)" (?GetProperty@Camera@FlyCapture2@@UAE?AVError@2@PAUProperty@2@@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetProperty(struct FlyCapture2::Property *)" (?GetProperty@Camera@FlyCapture2@@UAE?AVError@2@PAUProperty@2@@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetProperty(struct FlyCapture2::Property const *,bool)" (?SetProperty@Camera@FlyCapture2@@UAE?AVError@2@PBUProperty@2@_N@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetProperty(struct FlyCapture2::Property const *,bool)" (?SetProperty@Camera@FlyCapture2@@UAE?AVError@2@PBUProperty@2@_N@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetGPIOPinDirection(unsigned int,unsigned int *)" (?GetGPIOPinDirection@Camera@FlyCapture2@@UAE?AVError@2@IPAI@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetGPIOPinDirection(unsigned int,unsigned int *)" (?GetGPIOPinDirection@Camera@FlyCapture2@@UAE?AVError@2@IPAI@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetGPIOPinDirection(unsigned int,unsigned int,bool)" (?SetGPIOPinDirection@Camera@FlyCapture2@@UAE?AVError@2@II_N@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetGPIOPinDirection(unsigned int,unsigned int,bool)" (?SetGPIOPinDirection@Camera@FlyCapture2@@UAE?AVError@2@II_N@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetTriggerModeInfo(struct FlyCapture2::TriggerModeInfo *)" (?GetTriggerModeInfo@Camera@FlyCapture2@@UAE?AVError@2@PAUTriggerModeInfo@2@@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetTriggerModeInfo(struct FlyCapture2::TriggerModeInfo *)" (?GetTriggerModeInfo@Camera@FlyCapture2@@UAE?AVError@2@PAUTriggerModeInfo@2@@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetTriggerMode(struct FlyCapture2::TriggerMode *)" (?GetTriggerMode@Camera@FlyCapture2@@UAE?AVError@2@PAUTriggerMode@2@@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetTriggerMode(struct FlyCapture2::TriggerMode *)" (?GetTriggerMode@Camera@FlyCapture2@@UAE?AVError@2@PAUTriggerMode@2@@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetTriggerMode(struct FlyCapture2::TriggerMode const *,bool)" (?SetTriggerMode@Camera@FlyCapture2@@UAE?AVError@2@PBUTriggerMode@2@_N@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetTriggerMode(struct FlyCapture2::TriggerMode const *,bool)" (?SetTriggerMode@Camera@FlyCapture2@@UAE?AVError@2@PBUTriggerMode@2@_N@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::FireSoftwareTrigger(bool)" (?FireSoftwareTrigger@Camera@FlyCapture2@@UAE?AVError@2@_N@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::FireSoftwareTrigger(bool)" (?FireSoftwareTrigger@Camera@FlyCapture2@@UAE?AVError@2@_N@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetTriggerDelayInfo(struct FlyCapture2::PropertyInfo *)" (?GetTriggerDelayInfo@Camera@FlyCapture2@@UAE?AVError@2@PAUPropertyInfo@2@@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetTriggerDelayInfo(struct FlyCapture2::PropertyInfo *)" (?GetTriggerDelayInfo@Camera@FlyCapture2@@UAE?AVError@2@PAUPropertyInfo@2@@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetTriggerDelay(struct FlyCapture2::Property *)" (?GetTriggerDelay@Camera@FlyCapture2@@UAE?AVError@2@PAUProperty@2@@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetTriggerDelay(struct FlyCapture2::Property *)" (?GetTriggerDelay@Camera@FlyCapture2@@UAE?AVError@2@PAUProperty@2@@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetTriggerDelay(struct FlyCapture2::Property const *,bool)" (?SetTriggerDelay@Camera@FlyCapture2@@UAE?AVError@2@PBUProperty@2@_N@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetTriggerDelay(struct FlyCapture2::Property const *,bool)" (?SetTriggerDelay@Camera@FlyCapture2@@UAE?AVError@2@PBUProperty@2@_N@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetStrobeInfo(struct FlyCapture2::StrobeInfo *)" (?GetStrobeInfo@Camera@FlyCapture2@@UAE?AVError@2@PAUStrobeInfo@2@@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetStrobeInfo(struct FlyCapture2::StrobeInfo *)" (?GetStrobeInfo@Camera@FlyCapture2@@UAE?AVError@2@PAUStrobeInfo@2@@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetStrobe(struct FlyCapture2::StrobeControl *)" (?GetStrobe@Camera@FlyCapture2@@UAE?AVError@2@PAUStrobeControl@2@@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetStrobe(struct FlyCapture2::StrobeControl *)" (?GetStrobe@Camera@FlyCapture2@@UAE?AVError@2@PAUStrobeControl@2@@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetStrobe(struct FlyCapture2::StrobeControl const *,bool)" (?SetStrobe@Camera@FlyCapture2@@UAE?AVError@2@PBUStrobeControl@2@_N@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetStrobe(struct FlyCapture2::StrobeControl const *,bool)" (?SetStrobe@Camera@FlyCapture2@@UAE?AVError@2@PBUStrobeControl@2@_N@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetLUTInfo(struct FlyCapture2::LUTData *)" (?GetLUTInfo@Camera@FlyCapture2@@UAE?AVError@2@PAULUTData@2@@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetLUTInfo(struct FlyCapture2::LUTData *)" (?GetLUTInfo@Camera@FlyCapture2@@UAE?AVError@2@PAULUTData@2@@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetLUTBankInfo(unsigned int,bool *,bool *)" (?GetLUTBankInfo@Camera@FlyCapture2@@UAE?AVError@2@IPA_N0@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetLUTBankInfo(unsigned int,bool *,bool *)" (?GetLUTBankInfo@Camera@FlyCapture2@@UAE?AVError@2@IPA_N0@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetActiveLUTBank(unsigned int *)" (?GetActiveLUTBank@Camera@FlyCapture2@@UAE?AVError@2@PAI@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetActiveLUTBank(unsigned int *)" (?GetActiveLUTBank@Camera@FlyCapture2@@UAE?AVError@2@PAI@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetActiveLUTBank(unsigned int)" (?SetActiveLUTBank@Camera@FlyCapture2@@UAE?AVError@2@I@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetActiveLUTBank(unsigned int)" (?SetActiveLUTBank@Camera@FlyCapture2@@UAE?AVError@2@I@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::EnableLUT(bool)" (?EnableLUT@Camera@FlyCapture2@@UAE?AVError@2@_N@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::EnableLUT(bool)" (?EnableLUT@Camera@FlyCapture2@@UAE?AVError@2@_N@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetLUTChannel(unsigned int,unsigned int,unsigned int,unsigned int *)" (?GetLUTChannel@Camera@FlyCapture2@@UAE?AVError@2@IIIPAI@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetLUTChannel(unsigned int,unsigned int,unsigned int,unsigned int *)" (?GetLUTChannel@Camera@FlyCapture2@@UAE?AVError@2@IIIPAI@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetLUTChannel(unsigned int,unsigned int,unsigned int,unsigned int const *)" (?SetLUTChannel@Camera@FlyCapture2@@UAE?AVError@2@IIIPBI@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetLUTChannel(unsigned int,unsigned int,unsigned int,unsigned int const *)" (?SetLUTChannel@Camera@FlyCapture2@@UAE?AVError@2@IIIPBI@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetMemoryChannel(unsigned int *)" (?GetMemoryChannel@Camera@FlyCapture2@@UAE?AVError@2@PAI@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetMemoryChannel(unsigned int *)" (?GetMemoryChannel@Camera@FlyCapture2@@UAE?AVError@2@PAI@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SaveToMemoryChannel(unsigned int)" (?SaveToMemoryChannel@Camera@FlyCapture2@@UAE?AVError@2@I@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SaveToMemoryChannel(unsigned int)" (?SaveToMemoryChannel@Camera@FlyCapture2@@UAE?AVError@2@I@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::RestoreFromMemoryChannel(unsigned int)" (?RestoreFromMemoryChannel@Camera@FlyCapture2@@UAE?AVError@2@I@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::RestoreFromMemoryChannel(unsigned int)" (?RestoreFromMemoryChannel@Camera@FlyCapture2@@UAE?AVError@2@I@Z) referenced in function __ehhandler$?visionrun2@@YAPAXPAX@Z
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetMemoryChannelInfo(unsigned int *)" (?GetMemoryChannelInfo@Camera@FlyCapture2@@UAE?AVError@2@PAI@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetMemoryChannelInfo(unsigned int *)" (?GetMemoryChannelInfo@Camera@FlyCapture2@@UAE?AVError@2@PAI@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetEmbeddedImageInfo(struct FlyCapture2::EmbeddedImageInfo *)" (?GetEmbeddedImageInfo@Camera@FlyCapture2@@UAE?AVError@2@PAUEmbeddedImageInfo@2@@Z)
+     1>VisionThread2.obj : error LNK2019: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetEmbeddedImageInfo(struct FlyCapture2::EmbeddedImageInfo *)" (?GetEmbeddedImageInfo@Camera@FlyCapture2@@UAE?AVError@2@PAUEmbeddedImageInfo@2@@Z) referenced in function "void * __cdecl visionrun2(void *)" (?visionrun2@@YAPAXPAX@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetEmbeddedImageInfo(struct FlyCapture2::EmbeddedImageInfo *)" (?SetEmbeddedImageInfo@Camera@FlyCapture2@@UAE?AVError@2@PAUEmbeddedImageInfo@2@@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetEmbeddedImageInfo(struct FlyCapture2::EmbeddedImageInfo *)" (?SetEmbeddedImageInfo@Camera@FlyCapture2@@UAE?AVError@2@PAUEmbeddedImageInfo@2@@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::WriteRegister(unsigned int,unsigned int,bool)" (?WriteRegister@Camera@FlyCapture2@@UAE?AVError@2@II_N@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::WriteRegister(unsigned int,unsigned int,bool)" (?WriteRegister@Camera@FlyCapture2@@UAE?AVError@2@II_N@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::ReadRegister(unsigned int,unsigned int *)" (?ReadRegister@Camera@FlyCapture2@@UAE?AVError@2@IPAI@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::ReadRegister(unsigned int,unsigned int *)" (?ReadRegister@Camera@FlyCapture2@@UAE?AVError@2@IPAI@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::WriteRegisterBlock(unsigned short,unsigned int,unsigned int const *,unsigned int)" (?WriteRegisterBlock@Camera@FlyCapture2@@UAE?AVError@2@GIPBII@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::WriteRegisterBlock(unsigned short,unsigned int,unsigned int const *,unsigned int)" (?WriteRegisterBlock@Camera@FlyCapture2@@UAE?AVError@2@GIPBII@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::ReadRegisterBlock(unsigned short,unsigned int,unsigned int *,unsigned int)" (?ReadRegisterBlock@Camera@FlyCapture2@@UAE?AVError@2@GIPAII@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::ReadRegisterBlock(unsigned short,unsigned int,unsigned int *,unsigned int)" (?ReadRegisterBlock@Camera@FlyCapture2@@UAE?AVError@2@GIPAII@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetCycleTime(struct FlyCapture2::TimeStamp *)" (?GetCycleTime@Camera@FlyCapture2@@UAE?AVError@2@PAUTimeStamp@2@@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetCycleTime(struct FlyCapture2::TimeStamp *)" (?GetCycleTime@Camera@FlyCapture2@@UAE?AVError@2@PAUTimeStamp@2@@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetStats(struct FlyCapture2::CameraStats *)" (?GetStats@Camera@FlyCapture2@@UAE?AVError@2@PAUCameraStats@2@@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetStats(struct FlyCapture2::CameraStats *)" (?GetStats@Camera@FlyCapture2@@UAE?AVError@2@PAUCameraStats@2@@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::ResetStats(void)" (?ResetStats@Camera@FlyCapture2@@UAE?AVError@2@XZ)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::ResetStats(void)" (?ResetStats@Camera@FlyCapture2@@UAE?AVError@2@XZ)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetVideoModeAndFrameRateInfo(enum FlyCapture2::VideoMode,enum FlyCapture2::FrameRate,bool *)" (?GetVideoModeAndFrameRateInfo@Camera@FlyCapture2@@UAE?AVError@2@W4VideoMode@2@W4FrameRate@2@PA_N@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetVideoModeAndFrameRateInfo(enum FlyCapture2::VideoMode,enum FlyCapture2::FrameRate,bool *)" (?GetVideoModeAndFrameRateInfo@Camera@FlyCapture2@@UAE?AVError@2@W4VideoMode@2@W4FrameRate@2@PA_N@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetVideoModeAndFrameRate(enum FlyCapture2::VideoMode *,enum FlyCapture2::FrameRate *)" (?GetVideoModeAndFrameRate@Camera@FlyCapture2@@UAE?AVError@2@PAW4VideoMode@2@PAW4FrameRate@2@@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetVideoModeAndFrameRate(enum FlyCapture2::VideoMode *,enum FlyCapture2::FrameRate *)" (?GetVideoModeAndFrameRate@Camera@FlyCapture2@@UAE?AVError@2@PAW4VideoMode@2@PAW4FrameRate@2@@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetVideoModeAndFrameRate(enum FlyCapture2::VideoMode,enum FlyCapture2::FrameRate)" (?SetVideoModeAndFrameRate@Camera@FlyCapture2@@UAE?AVError@2@W4VideoMode@2@W4FrameRate@2@@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetVideoModeAndFrameRate(enum FlyCapture2::VideoMode,enum FlyCapture2::FrameRate)" (?SetVideoModeAndFrameRate@Camera@FlyCapture2@@UAE?AVError@2@W4VideoMode@2@W4FrameRate@2@@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetFormat7Info(struct FlyCapture2::Format7Info *,bool *)" (?GetFormat7Info@Camera@FlyCapture2@@UAE?AVError@2@PAUFormat7Info@2@PA_N@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetFormat7Info(struct FlyCapture2::Format7Info *,bool *)" (?GetFormat7Info@Camera@FlyCapture2@@UAE?AVError@2@PAUFormat7Info@2@PA_N@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::ValidateFormat7Settings(struct FlyCapture2::Format7ImageSettings const *,bool *,struct FlyCapture2::Format7PacketInfo *)" (?ValidateFormat7Settings@Camera@FlyCapture2@@UAE?AVError@2@PBUFormat7ImageSettings@2@PA_NPAUFormat7PacketInfo@2@@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::ValidateFormat7Settings(struct FlyCapture2::Format7ImageSettings const *,bool *,struct FlyCapture2::Format7PacketInfo *)" (?ValidateFormat7Settings@Camera@FlyCapture2@@UAE?AVError@2@PBUFormat7ImageSettings@2@PA_NPAUFormat7PacketInfo@2@@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetFormat7Configuration(struct FlyCapture2::Format7ImageSettings *,unsigned int *,float *)" (?GetFormat7Configuration@Camera@FlyCapture2@@UAE?AVError@2@PAUFormat7ImageSettings@2@PAIPAM@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::GetFormat7Configuration(struct FlyCapture2::Format7ImageSettings *,unsigned int *,float *)" (?GetFormat7Configuration@Camera@FlyCapture2@@UAE?AVError@2@PAUFormat7ImageSettings@2@PAIPAM@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetFormat7Configuration(struct FlyCapture2::Format7ImageSettings const *,float)" (?SetFormat7Configuration@Camera@FlyCapture2@@UAE?AVError@2@PBUFormat7ImageSettings@2@M@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetFormat7Configuration(struct FlyCapture2::Format7ImageSettings const *,float)" (?SetFormat7Configuration@Camera@FlyCapture2@@UAE?AVError@2@PBUFormat7ImageSettings@2@M@Z)
+     1>VisionThread.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetFormat7Configuration(struct FlyCapture2::Format7ImageSettings const *,unsigned int)" (?SetFormat7Configuration@Camera@FlyCapture2@@UAE?AVError@2@PBUFormat7ImageSettings@2@I@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "public: virtual class FlyCapture2::Error __thiscall FlyCapture2::Camera::SetFormat7Configuration(struct FlyCapture2::Format7ImageSettings const *,unsigned int)" (?SetFormat7Configuration@Camera@FlyCapture2@@UAE?AVError@2@PBUFormat7ImageSettings@2@I@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "public: class cv::Mat & __thiscall cv::Mat::operator=(class cv::Scalar_<double> const &)" (??4Mat@cv@@QAEAAV01@ABV?$Scalar_@N@1@@Z) referenced in function "public: __thiscall cv::Mat::Mat(int,int,int,class cv::Scalar_<double> const &)" (??0Mat@cv@@QAE@HHHABV?$Scalar_@N@1@@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "public: virtual __thiscall cv::Exception::~Exception(void)" (??1Exception@cv@@UAE@XZ) referenced in function "public: __thiscall cv::Mat::Mat(int,int,int,void *,unsigned int)" (??0Mat@cv@@QAE@HHHPAXI@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "void __cdecl cv::error(class cv::Exception const &)" (?error@cv@@YAXABVException@1@@Z) referenced in function "public: __thiscall cv::Mat::Mat(int,int,int,void *,unsigned int)" (??0Mat@cv@@QAE@HHHPAXI@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "public: __thiscall cv::Exception::Exception(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)" (??0Exception@cv@@QAE@HABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00H@Z) referenced in function "public: __thiscall cv::Mat::Mat(int,int,int,void *,unsigned int)" (??0Mat@cv@@QAE@HHHPAXI@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "void __cdecl cv::fastFree(void *)" (?fastFree@cv@@YAXPAX@Z) referenced in function "public: __thiscall cv::Mat::~Mat(void)" (??1Mat@cv@@QAE@XZ)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "public: void __thiscall cv::Mat::copySize(class cv::Mat const &)" (?copySize@Mat@cv@@QAEXABV12@@Z) referenced in function "public: class cv::Mat & __thiscall cv::Mat::operator=(class cv::Mat const &)" (??4Mat@cv@@QAEAAV01@ABV01@@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "int __cdecl cv::_interlockedExchangeAdd(int *,int)" (?_interlockedExchangeAdd@cv@@YAHPAHH@Z) referenced in function "public: class cv::Mat & __thiscall cv::Mat::operator=(class cv::Mat const &)" (??4Mat@cv@@QAEAAV01@ABV01@@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "public: void __thiscall cv::Mat::create(int,int const *,int)" (?create@Mat@cv@@QAEXHPBHH@Z) referenced in function "public: void __thiscall cv::Mat::create(int,int,int)" (?create@Mat@cv@@QAEXHHH@Z)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "public: void __thiscall cv::Mat::deallocate(void)" (?deallocate@Mat@cv@@QAEXXZ) referenced in function "public: void __thiscall cv::Mat::release(void)" (?release@Mat@cv@@QAEXXZ)
+     1>VisionThread.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: virtual __thiscall FlyCapture2::Camera::~Camera(void)" (__imp_??1Camera@FlyCapture2@@UAE@XZ) referenced in function "public: virtual void * __thiscall FlyCapture2::Camera::`scalar deleting destructor'(unsigned int)" (??_GCamera@FlyCapture2@@UAEPAXI@Z)
+     1>VisionThread2.obj : error LNK2001: unresolved external symbol "__declspec(dllimport) public: virtual __thiscall FlyCapture2::Camera::~Camera(void)" (__imp_??1Camera@FlyCapture2@@UAE@XZ)
+     1>C:\Users\HP\Documents\GitHub\feedback_experiment\Debug\grasp_exp.exe : fatal error LNK1120: 92 unresolved externals
      1>Done Building Project "C:\Users\HP\Documents\GitHub\feedback_experiment\grasp_exp\grasp_exp.vcxproj" (build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:11.91
+Time Elapsed 00:00:00.23
