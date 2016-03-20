@@ -1,0 +1,165 @@
+﻿Build started 20/03/2016 16:31:48.
+     1>Project "C:\Users\HP\Documents\GitHub\feedback_experiment\grasp_exp\grasp_exp.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\grasp_exp.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Program Files\Point Grey Research\FlyCapture2\include" /IC:\opencv\build\include /I"C:\Program Files\Force Dimension\sdk-3.5.3\include" /I"C:\Program Files\Force Dimension\sdk-3.5.3\external\Eigen" /I"C:\Program Files\Force Dimension\sdk-3.5.3\external\freeglut\include" /IC:\OpenCV\Build\x64\vc10\include /I"C:\Numerical Recipes\Cpp211\cpp\otherm" /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\VS_GUI_SERVER\CommonDS.cpp FileHandle.cpp FrameRateCounter.cpp Haptic.cpp maingrasp.cpp PracticalSocket\PracticalSocket.cpp protocol.cpp sigma_comm.cpp Timer.cpp VisionThread.cpp VisionThread2.cpp
+         VisionThread2.cpp
+     1>VisionThread2.cpp(83): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>VisionThread2.cpp(83): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>VisionThread2.cpp(90): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>VisionThread2.cpp(90): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>VisionThread2.cpp(91): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>VisionThread2.cpp(91): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>VisionThread2.cpp(92): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>VisionThread2.cpp(92): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>VisionThread2.cpp(93): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>VisionThread2.cpp(93): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>VisionThread2.cpp(71): warning C4101: 'wy' : unreferenced local variable
+     1>VisionThread2.cpp(237): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>VisionThread2.cpp(237): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>VisionThread2.cpp(237): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>VisionThread2.cpp(510): warning C4244: '=' : conversion from 'double' to 'unsigned int', possible loss of data
+     1>VisionThread2.cpp(511): warning C4244: '=' : conversion from 'double' to 'unsigned int', possible loss of data
+         VisionThread.cpp
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(45): warning C4244: 'return' : conversion from 'const double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(928): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(929): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(930): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(931): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\FileHandle.h(28): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\protocol.h(35): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\protocol.h(39): warning C4305: '=' : truncation from 'double' to 'float'
+     1>VisionThread.cpp(109): warning C4244: 'initializing' : conversion from 'double' to 'unsigned int', possible loss of data
+     1>VisionThread.cpp(115): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>VisionThread.cpp(140): warning C4244: 'initializing' : conversion from 'double' to 'unsigned int', possible loss of data
+     1>VisionThread.cpp(212): warning C4244: 'initializing' : conversion from 'double' to 'unsigned int', possible loss of data
+         Timer.cpp
+         sigma_comm.cpp
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Haptic.h(13): warning C4305: '=' : truncation from 'double' to 'float'
+     1>sigma_comm.cpp(303): warning C4101: 'nfound' : unreferenced local variable
+     1>sigma_comm.cpp(378): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>sigma_comm.cpp(379): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+         protocol.cpp
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Protocol.h(35): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Protocol.h(39): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(45): warning C4244: 'return' : conversion from 'const double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(928): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(929): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(930): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(931): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\FileHandle.h(28): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Haptic.h(13): warning C4305: '=' : truncation from 'double' to 'float'
+     1>protocol.cpp(95): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>protocol.cpp(136): warning C4305: '=' : truncation from 'double' to 'float'
+     1>protocol.cpp(144): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>protocol.cpp(154): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>protocol.cpp(168): warning C4305: '=' : truncation from 'double' to 'float'
+     1>protocol.cpp(181): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>protocol.cpp(247): warning C4305: '=' : truncation from 'double' to 'float'
+     1>protocol.cpp(255): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+         PracticalSocket.cpp
+         maingrasp.cpp
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(45): warning C4244: 'return' : conversion from 'const double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(928): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(929): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(930): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(931): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\FileHandle.h(28): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Protocol.h(35): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Protocol.h(39): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Haptic.h(13): warning C4305: '=' : truncation from 'double' to 'float'
+         Haptic.cpp
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Haptic.h(13): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(45): warning C4244: 'return' : conversion from 'const double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(928): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(929): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(930): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(931): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\FileHandle.h(28): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Protocol.h(35): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Protocol.h(39): warning C4305: '=' : truncation from 'double' to 'float'
+     1>Haptic.cpp(121): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>Haptic.cpp(121): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>Haptic.cpp(121): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>Haptic.cpp(121): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>Haptic.cpp(122): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>Haptic.cpp(122): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>Haptic.cpp(122): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>Haptic.cpp(160): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>Haptic.cpp(168): error C3861: 'getGripForce': identifier not found
+     1>Haptic.cpp(264): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>Haptic.cpp(396): error C2143: syntax error : missing ']' before 'constant'
+     1>Haptic.cpp(396): error C2059: syntax error : ']'
+     1>Haptic.cpp(396): error C2059: syntax error : ')'
+     1>Haptic.cpp(396): error C2059: syntax error : 'constant'
+     1>Haptic.cpp(396): error C2059: syntax error : ')'
+     1>Haptic.cpp(398): error C2181: illegal else without matching if
+     1>Haptic.cpp(398): error C2065: 'Gripper' : undeclared identifier
+     1>Haptic.cpp(399): error C2065: 'KG' : undeclared identifier
+     1>Haptic.cpp(399): error C2065: 'Gripper' : undeclared identifier
+     1>Haptic.cpp(401): error C2065: 'KG' : undeclared identifier
+     1>Haptic.cpp(402): error C2065: 'K' : undeclared identifier
+     1>Haptic.cpp(402): error C2065: 'd' : undeclared identifier
+     1>Haptic.cpp(402): error C2065: 'K' : undeclared identifier
+     1>Haptic.cpp(402): error C2065: 'd' : undeclared identifier
+     1>Haptic.cpp(402): error C2065: 'K' : undeclared identifier
+     1>Haptic.cpp(402): error C2065: 'd' : undeclared identifier
+     1>Haptic.cpp(402): error C2065: 'Gripper' : undeclared identifier
+     1>Haptic.cpp(402): error C2065: 'KG' : undeclared identifier
+     1>Haptic.cpp(410): error C2065: 'Gripper' : undeclared identifier
+     1>Haptic.cpp(418): error C2065: 'filtSize' : undeclared identifier
+     1>Haptic.cpp(420): error C2065: 'oldGrip' : undeclared identifier
+     1>Haptic.cpp(421): error C2065: 'oldFiltGrip' : undeclared identifier
+     1>Haptic.cpp(427): error C2065: 'filtGrip' : undeclared identifier
+     1>Haptic.cpp(427): error C2065: 'B' : undeclared identifier
+     1>Haptic.cpp(428): error C2065: 'filtSize' : undeclared identifier
+     1>Haptic.cpp(429): error C2065: 'filtGrip' : undeclared identifier
+     1>Haptic.cpp(429): error C2065: 'B' : undeclared identifier
+     1>Haptic.cpp(429): error C2065: 'oldGrip' : undeclared identifier
+     1>Haptic.cpp(429): error C2065: 'A' : undeclared identifier
+     1>Haptic.cpp(429): error C2065: 'oldFiltGrip' : undeclared identifier
+     1>Haptic.cpp(430): error C2065: 'filtSize' : undeclared identifier
+     1>Haptic.cpp(432): error C2065: 'oldGrip' : undeclared identifier
+     1>Haptic.cpp(432): error C2065: 'oldGrip' : undeclared identifier
+     1>Haptic.cpp(433): error C2065: 'oldFiltGrip' : undeclared identifier
+     1>Haptic.cpp(433): error C2065: 'oldFiltGrip' : undeclared identifier
+     1>Haptic.cpp(435): error C2065: 'oldGrip' : undeclared identifier
+     1>Haptic.cpp(436): error C2065: 'oldFiltGrip' : undeclared identifier
+     1>Haptic.cpp(436): error C2065: 'filtGrip' : undeclared identifier
+     1>Haptic.cpp(442): error C2065: 'KG' : undeclared identifier
+     1>Haptic.cpp(451): error C2065: 'filtGrip' : undeclared identifier
+         FrameRateCounter.cpp
+         FileHandle.cpp
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(45): warning C4244: 'return' : conversion from 'const double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(928): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(929): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(930): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(931): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\FileHandle.h(28): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Haptic.h(13): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Protocol.h(35): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\Protocol.h(39): warning C4305: '=' : truncation from 'double' to 'float'
+     1>FileHandle.cpp(21): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>FileHandle.cpp(30): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>FileHandle.cpp(31): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>FileHandle.cpp(37): warning C4101: 'i' : unreferenced local variable
+     1>FileHandle.cpp(51): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>FileHandle.cpp(52): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>FileHandle.cpp(53): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>FileHandle.cpp(54): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+         CommonDS.cpp
+         Generating Code...
+     1>c:\users\hp\documents\github\feedback_experiment\grasp_exp\visionthread2.cpp(138): warning C4700: uninitialized local variable 'wy' used
+     1>Done Building Project "C:\Users\HP\Documents\GitHub\feedback_experiment\grasp_exp\grasp_exp.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:11.91

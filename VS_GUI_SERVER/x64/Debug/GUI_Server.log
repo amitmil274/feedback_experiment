@@ -1,0 +1,65 @@
+﻿Build started 27/07/2015 17:30:00.
+     1>Project "C:\Users\HP\Dropbox (BIO MEDICAL ROBOTICS)\grasp_exp2_feedback_camera\VS_GUI_SERVER\GUI_Server.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "x64\Debug\GUI_Server.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /IC:\Qt\4.8.6\include\QtCore /IC:\Qt\4.8.6\include\QtNetwork /IC:\Qt\4.8.6\include\QtGui /IC:\Qt\4.8.6\include\Qt3Support /IC:\Qt\4.8.6\include /IC:\Qt\4.8.6\include\ActiveQt /I.\release /IC:\Qt\4.8.6\mkspecs\default /I.\GeneratedFiles /Zi /nologo /W1 /WX- /O2 /D QT_DLL /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt Debug\moc_keypad.cpp Debug\moc_siform.cpp keypad.cpp main.cpp Release\moc_siform.cpp siform.cpp
+         moc_keypad.cpp
+     1>c1xx : fatal error C1083: Cannot open source file: 'Debug\moc_keypad.cpp': No such file or directory
+         moc_siform.cpp
+     1>c1xx : fatal error C1083: Cannot open source file: 'Debug\moc_siform.cpp': No such file or directory
+         keypad.cpp
+     1>keypad.cpp(60): error C2664: 'fopen' : cannot convert parameter 1 from 'QString' to 'const char *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+         main.cpp
+     1>c:\users\hp\dropbox (bio medical robotics)\grasp_exp2_feedback_camera\vs_gui_server\siform.h(66): error C2061: syntax error : identifier 'Q_UINT16'
+     1>main.cpp(12): error C2664: 'ServerNForm::ServerNForm(const ServerNForm &)' : cannot convert parameter 1 from 'unsigned short' to 'const ServerNForm &'
+                 Reason: cannot convert from 'unsigned short' to 'const ServerNForm'
+                 No constructor could take the source type, or constructor overload resolution was ambiguous
+         moc_siform.cpp
+     1>c:\users\hp\dropbox (bio medical robotics)\grasp_exp2_feedback_camera\vs_gui_server\release\../siform.h(66): error C2061: syntax error : identifier 'Q_UINT16'
+         siform.cpp
+     1>c:\users\hp\dropbox (bio medical robotics)\grasp_exp2_feedback_camera\vs_gui_server\siform.h(66): error C2061: syntax error : identifier 'Q_UINT16'
+     1>siform.cpp(21): error C2065: 'Q_UINT16' : undeclared identifier
+     1>siform.cpp(21): error C2146: syntax error : missing ')' before identifier 'port'
+     1>siform.cpp(21): error C2761: '{ctor}' : member function redeclaration not allowed
+     1>siform.cpp(21): error C2059: syntax error : ')'
+     1>siform.cpp(22): error C2143: syntax error : missing ';' before '{'
+     1>siform.cpp(22): error C2447: '{' : missing function header (old-style formal list?)
+     1>siform.cpp(634): error C2039: 'setPixmap' : is not a member of 'QPushButton'
+                 c:\qt\4.8.6\include\qtgui\../../src/gui/widgets/qpushbutton.h(57) : see declaration of 'QPushButton'
+     1>siform.cpp(638): error C2039: 'setPixmap' : is not a member of 'QPushButton'
+                 c:\qt\4.8.6\include\qtgui\../../src/gui/widgets/qpushbutton.h(57) : see declaration of 'QPushButton'
+     1>siform.cpp(641): error C2039: 'setPixmap' : is not a member of 'QPushButton'
+                 c:\qt\4.8.6\include\qtgui\../../src/gui/widgets/qpushbutton.h(57) : see declaration of 'QPushButton'
+     1>siform.cpp(644): error C2039: 'setPixmap' : is not a member of 'QPushButton'
+                 c:\qt\4.8.6\include\qtgui\../../src/gui/widgets/qpushbutton.h(57) : see declaration of 'QPushButton'
+     1>siform.cpp(647): error C2039: 'setPixmap' : is not a member of 'QPushButton'
+                 c:\qt\4.8.6\include\qtgui\../../src/gui/widgets/qpushbutton.h(57) : see declaration of 'QPushButton'
+     1>siform.cpp(652): error C2039: 'setPixmap' : is not a member of 'QPushButton'
+                 c:\qt\4.8.6\include\qtgui\../../src/gui/widgets/qpushbutton.h(57) : see declaration of 'QPushButton'
+     1>siform.cpp(655): error C2039: 'setPixmap' : is not a member of 'QPushButton'
+                 c:\qt\4.8.6\include\qtgui\../../src/gui/widgets/qpushbutton.h(57) : see declaration of 'QPushButton'
+     1>siform.cpp(658): error C2039: 'setPixmap' : is not a member of 'QPushButton'
+                 c:\qt\4.8.6\include\qtgui\../../src/gui/widgets/qpushbutton.h(57) : see declaration of 'QPushButton'
+     1>siform.cpp(661): error C2039: 'setPixmap' : is not a member of 'QPushButton'
+                 c:\qt\4.8.6\include\qtgui\../../src/gui/widgets/qpushbutton.h(57) : see declaration of 'QPushButton'
+     1>siform.cpp(864): error C2039: 'encode' : is not a member of 'QUrl'
+                 c:\qt\4.8.6\include\qtcore\../../src/corelib/io/qurl.h(62) : see declaration of 'QUrl'
+     1>siform.cpp(864): error C3861: 'encode': identifier not found
+     1>siform.cpp(865): error C2039: 'encode' : is not a member of 'QUrl'
+                 c:\qt\4.8.6\include\qtcore\../../src/corelib/io/qurl.h(62) : see declaration of 'QUrl'
+     1>siform.cpp(865): error C3861: 'encode': identifier not found
+     1>siform.cpp(866): error C2039: 'encode' : is not a member of 'QUrl'
+                 c:\qt\4.8.6\include\qtcore\../../src/corelib/io/qurl.h(62) : see declaration of 'QUrl'
+     1>siform.cpp(866): error C3861: 'encode': identifier not found
+     1>siform.cpp(878): error C2039: 'utf8' : is not a member of 'QString'
+                 c:\qt\4.8.6\include\qtcore\../../src/corelib/tools/qstring.h(84) : see declaration of 'QString'
+     1>siform.cpp(884): error C2065: 'IO_WriteOnly' : undeclared identifier
+     1>siform.cpp(884): error C2065: 'IO_Append' : undeclared identifier
+         Generating Code...
+     1>Done Building Project "C:\Users\HP\Dropbox (BIO MEDICAL ROBOTICS)\grasp_exp2_feedback_camera\VS_GUI_SERVER\GUI_Server.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:05.25

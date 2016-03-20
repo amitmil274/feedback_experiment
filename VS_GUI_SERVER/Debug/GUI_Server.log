@@ -1,0 +1,30 @@
+﻿Build started 30/07/2015 11:46:33.
+     1>Project "C:\Users\HP\Dropbox (BIO MEDICAL ROBOTICS)\grasp_exp2_feedback_camera\VS_GUI_SERVER\GUI_Server.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\GUI_Server.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\Qt\4.8.6\include\QtCore /IC:\Qt\4.8.6\include\QtNetwork /IC:\Qt\4.8.6\include\QtGui /IC:\Qt\4.8.6\include\Qt3Support /IC:\Qt\4.8.6\include /IC:\Qt\4.8.6\include\ActiveQt /I.\Debug /IC:\Qt\4.8.6\mkspecs\default /I.\GeneratedFiles /Zi /nologo /W1 /WX- /O2 /Oy- /D _WINDOWS /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D QT_DLL /D QT_QT3SUPPORT_LIB /D QT3_SUPPORT /D QT_GUI_LIB /D QT_NETWORK_LIB /D QT_CORE_LIB /D QT_HAVE_MMX /D QT_HAVE_3DNOW /D QT_HAVE_SSE /D QT_HAVE_MMXEXT /D QT_HAVE_SSE2 /D QT_THREAD_SUPPORT /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt CommonDS.cpp Debug\moc_siform.cpp keypad.cpp main.cpp Release\moc_keypad.cpp Release\moc_siform.cpp siform.cpp
+         CommonDS.cpp
+         moc_siform.cpp
+     1>c1xx : fatal error C1083: Cannot open source file: 'Debug\moc_siform.cpp': No such file or directory
+         keypad.cpp
+     1>c:\qt\4.8.6\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: 'QT_LARGEFILE_SUPPORT' : macro redefinition
+                 command-line arguments :  see previous definition of 'QT_LARGEFILE_SUPPORT'
+         main.cpp
+     1>c:\qt\4.8.6\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: 'QT_LARGEFILE_SUPPORT' : macro redefinition
+                 command-line arguments :  see previous definition of 'QT_LARGEFILE_SUPPORT'
+         moc_keypad.cpp
+     1>c:\qt\4.8.6\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: 'QT_LARGEFILE_SUPPORT' : macro redefinition
+                 command-line arguments :  see previous definition of 'QT_LARGEFILE_SUPPORT'
+         moc_siform.cpp
+     1>c:\qt\4.8.6\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: 'QT_LARGEFILE_SUPPORT' : macro redefinition
+                 command-line arguments :  see previous definition of 'QT_LARGEFILE_SUPPORT'
+         siform.cpp
+     1>c:\qt\4.8.6\include\qtcore\../../src/corelib/global/qconfig.h(41): warning C4005: 'QT_LARGEFILE_SUPPORT' : macro redefinition
+                 command-line arguments :  see previous definition of 'QT_LARGEFILE_SUPPORT'
+         Generating Code...
+     1>Done Building Project "C:\Users\HP\Dropbox (BIO MEDICAL ROBOTICS)\grasp_exp2_feedback_camera\VS_GUI_SERVER\GUI_Server.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:06.03

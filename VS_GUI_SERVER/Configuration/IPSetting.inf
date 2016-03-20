@@ -1,0 +1,13 @@
+3
+BGURAVEN 132 72 10 136
+localhost 127 0 0 1
+BGU 132 72 15 219
+
+
+
+// Grammer
+// 1. number of IP address
+// 2. IP name IP address, which should be descriminated by space ' ', not '.'
+// 3. the name of defult IP address
+
+// Maximum number of IP addresses is 16

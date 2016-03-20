@@ -1,0 +1,21 @@
+﻿Build started 10/03/2016 15:39:31.
+     1>Project "C:\Users\HP\Desktop\grasp_exp2_feedback_camera_ori - working\grasp_exp\grasp_exp.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "x64\Debug\grasp_exp.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         All outputs are up-to-date.
+         grasp_exp.vcxproj -> C:\Users\HP\Desktop\grasp_exp2_feedback_camera_ori - working\x64\Debug\grasp_exp.exe
+       Manifest:
+         All outputs are up-to-date.
+       FinalizeBuildStatus:
+         Deleting file "x64\Debug\grasp_exp.unsuccessfulbuild".
+         Touching "x64\Debug\grasp_exp.lastbuildstate".
+     1>Done Building Project "C:\Users\HP\Desktop\grasp_exp2_feedback_camera_ori - working\grasp_exp\grasp_exp.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.11

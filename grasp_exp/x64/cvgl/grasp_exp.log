@@ -1,0 +1,30 @@
+﻿Build started 04/08/2015 18:24:35.
+     1>Project "C:\Users\HP\Dropbox (BIO MEDICAL ROBOTICS)\grasp_exp2_feedback_camera_ori\grasp_exp\grasp_exp.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "x64\cvgl\grasp_exp.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I"C:\Program Files\Point Grey Research\FlyCapture2\include" /I"C:\Program Files\Force Dimension\sdk-3.5.3\include" /I"C:\Program Files\Force Dimension\sdk-3.5.3\external\Eigen" /I"C:\Program Files\Force Dimension\sdk-3.5.3\external\freeglut\include" /IC:\opencv30\opencv\build\include /I"C:\Numerical Recipes\Cpp211\cpp\otherm" /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\cvgl\\" /Fd"x64\cvgl\vc100.pdb" /Gd /TP /errorReport:prompt VisionThread.cpp
+         VisionThread.cpp
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(45): warning C4244: 'return' : conversion from 'const double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(928): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(929): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(930): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\numerical recipes\cpp211\cpp\otherm\nrutil_af.h(931): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\hp\dropbox (bio medical robotics)\grasp_exp2_feedback_camera_ori\grasp_exp\FileHandle.h(28): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\hp\dropbox (bio medical robotics)\grasp_exp2_feedback_camera_ori\grasp_exp\protocol.h(35): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\hp\dropbox (bio medical robotics)\grasp_exp2_feedback_camera_ori\grasp_exp\protocol.h(39): warning C4305: '=' : truncation from 'double' to 'float'
+     1>VisionThread.cpp(16): error C2872: 'Error' : ambiguous symbol
+                 could be 'cv::Error'
+                 or       'c:\program files\point grey research\flycapture2\include\Error.h(39) : FlyCapture2::Error'
+     1>VisionThread.cpp(16): error C2872: 'Error' : ambiguous symbol
+                 could be 'cv::Error'
+                 or       'c:\program files\point grey research\flycapture2\include\Error.h(39) : FlyCapture2::Error'
+     1>VisionThread.cpp(16): error C2882: 'Error' : illegal use of namespace identifier in expression
+     1>VisionThread.cpp(16): error C2146: syntax error : missing ')' before identifier 'error'
+     1>VisionThread.cpp(16): error C2182: 'PrintError' : illegal use of type 'void'
+     1>VisionThread.cpp(16): fatal error C1903: unable to recover from previous error(s); stopping compilation
+     1>Done Building Project "C:\Users\HP\Dropbox (BIO MEDICAL ROBOTICS)\grasp_exp2_feedback_camera_ori\grasp_exp\grasp_exp.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.59
