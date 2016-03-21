@@ -30,6 +30,7 @@ public:
 	bool enable_gripper;
 	bool enable_orientation;
 	bool enable_position;
+	bool enable_gripforce;
 	bool fullscreen;
 };
 void *HapticsLoop(void* pUserData);

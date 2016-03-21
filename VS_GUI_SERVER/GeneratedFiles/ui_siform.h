@@ -100,13 +100,22 @@ public:
     QLabel *label_8;
     QLabel *label_9;
     QLabel *label_10;
+    QGroupBox *groupBox_gripKp;
+    QPushButton *gripKpDecreaseButton;
+    QPushButton *gripKpIncreaseButton;
+    QLineEdit *gripKpLineEdit;
+    QGroupBox *groupBox_gripKd;
+    QPushButton *gripKdDecreaseButton;
+    QPushButton *gripKdIncreaseButton;
+    QLineEdit *gripKdLineEdit;
+    QCheckBox *checkBox_GRIPPER_FORCE;
     QWidget *tab_2;
 
     void setupUi(QDialog *SIForm)
     {
         if (SIForm->objectName().isEmpty())
             SIForm->setObjectName(QString::fromUtf8("SIForm"));
-        SIForm->resize(1087, 733);
+        SIForm->resize(1094, 717);
         tabWidget = new QTabWidget(SIForm);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setGeometry(QRect(70, 30, 1001, 671));
@@ -437,6 +446,41 @@ public:
         label_10 = new QLabel(groupBox_2);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(20, 110, 51, 21));
+        groupBox_gripKp = new QGroupBox(tab2);
+        groupBox_gripKp->setObjectName(QString::fromUtf8("groupBox_gripKp"));
+        groupBox_gripKp->setGeometry(QRect(640, 380, 330, 105));
+        gripKpDecreaseButton = new QPushButton(groupBox_gripKp);
+        gripKpDecreaseButton->setObjectName(QString::fromUtf8("gripKpDecreaseButton"));
+        gripKpDecreaseButton->setGeometry(QRect(5, 28, 100, 70));
+        gripKpIncreaseButton = new QPushButton(groupBox_gripKp);
+        gripKpIncreaseButton->setObjectName(QString::fromUtf8("gripKpIncreaseButton"));
+        gripKpIncreaseButton->setGeometry(QRect(225, 28, 100, 70));
+        gripKpLineEdit = new QLineEdit(groupBox_gripKp);
+        gripKpLineEdit->setObjectName(QString::fromUtf8("gripKpLineEdit"));
+        gripKpLineEdit->setGeometry(QRect(110, 33, 110, 61));
+        gripKpLineEdit->setFocusPolicy(Qt::NoFocus);
+        gripKpLineEdit->setAlignment(Qt::AlignHCenter);
+        gripKpLineEdit->setReadOnly(true);
+        groupBox_gripKd = new QGroupBox(tab2);
+        groupBox_gripKd->setObjectName(QString::fromUtf8("groupBox_gripKd"));
+        groupBox_gripKd->setGeometry(QRect(640, 500, 330, 105));
+        gripKdDecreaseButton = new QPushButton(groupBox_gripKd);
+        gripKdDecreaseButton->setObjectName(QString::fromUtf8("gripKdDecreaseButton"));
+        gripKdDecreaseButton->setGeometry(QRect(5, 28, 100, 70));
+        gripKdIncreaseButton = new QPushButton(groupBox_gripKd);
+        gripKdIncreaseButton->setObjectName(QString::fromUtf8("gripKdIncreaseButton"));
+        gripKdIncreaseButton->setGeometry(QRect(225, 28, 100, 70));
+        gripKdLineEdit = new QLineEdit(groupBox_gripKd);
+        gripKdLineEdit->setObjectName(QString::fromUtf8("gripKdLineEdit"));
+        gripKdLineEdit->setGeometry(QRect(110, 33, 110, 61));
+        gripKdLineEdit->setFocusPolicy(Qt::NoFocus);
+        gripKdLineEdit->setAlignment(Qt::AlignHCenter);
+        gripKdLineEdit->setReadOnly(true);
+        checkBox_GRIPPER_FORCE = new QCheckBox(tab2);
+        checkBox_GRIPPER_FORCE->setObjectName(QString::fromUtf8("checkBox_GRIPPER_FORCE"));
+        checkBox_GRIPPER_FORCE->setGeometry(QRect(650, 360, 311, 20));
+        checkBox_GRIPPER_FORCE->setFont(font5);
+        checkBox_GRIPPER_FORCE->setChecked(true);
         tabWidget->addTab(tab2, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
@@ -444,7 +488,7 @@ public:
 
         retranslateUi(SIForm);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(SIForm);
@@ -498,6 +542,13 @@ public:
         label_8->setText(QApplication::translate("SIForm", "X", 0, QApplication::UnicodeUTF8));
         label_9->setText(QApplication::translate("SIForm", "Y", 0, QApplication::UnicodeUTF8));
         label_10->setText(QApplication::translate("SIForm", "Y", 0, QApplication::UnicodeUTF8));
+        groupBox_gripKp->setTitle(QApplication::translate("SIForm", "Grip Force Kp", 0, QApplication::UnicodeUTF8));
+        gripKpDecreaseButton->setText(QApplication::translate("SIForm", "<<", 0, QApplication::UnicodeUTF8));
+        gripKpIncreaseButton->setText(QApplication::translate("SIForm", ">>", 0, QApplication::UnicodeUTF8));
+        groupBox_gripKd->setTitle(QApplication::translate("SIForm", "Grip Force Kd", 0, QApplication::UnicodeUTF8));
+        gripKdDecreaseButton->setText(QApplication::translate("SIForm", "<<", 0, QApplication::UnicodeUTF8));
+        gripKdIncreaseButton->setText(QApplication::translate("SIForm", ">>", 0, QApplication::UnicodeUTF8));
+        checkBox_GRIPPER_FORCE->setText(QApplication::translate("SIForm", "ENABLE GRIPPER FORCE FEEDBACK", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(tab2), QApplication::translate("SIForm", "Engineer", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("SIForm", "Page", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

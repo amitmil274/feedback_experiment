@@ -76,10 +76,18 @@ private slots:
     void slotStart();
     void slotClose();
  
+
+	// SCALING
     void slotPScaleDecrease();
     void slotPScaleIncrease();
 	void slotGScaleDecrease();
     void slotGScaleIncrease();
+	//GRIP FORCE
+	void slotgripKpDecrease();
+    void slotgripKpIncrease();
+	void slotgripKdDecrease();
+    void slotgripKdIncrease();
+	void slotEnableGripForce();
 	void slotZeroXYZ();
 
 	void updateGUIFromMaster(int cnt);

@@ -131,10 +131,19 @@ ServerNForm::ServerNForm( Q_UINT16 port )
 	connect( A_startButton,		SIGNAL(clicked()),		this, SLOT(slotStart()) );
 	connect( A_okButton,		SIGNAL(clicked()),		this, SLOT(slotClose()) );
 	connect( this,				SIGNAL(closeEvent()),	this, SLOT(slotClose()) );
+	// SCALING
 	connect( scalePDecreaseButton, SIGNAL(clicked()),	this, SLOT(slotPScaleDecrease()) );
 	connect( scalePIncreaseButton, SIGNAL(clicked()),	this, SLOT(slotPScaleIncrease()) );
 	connect( scaleGDecreaseButton, SIGNAL(clicked()),	this, SLOT(slotGScaleDecrease()) );
 	connect( scaleGIncreaseButton, SIGNAL(clicked()),	this, SLOT(slotGScaleIncrease()) );
+	// GRIPPER FORCE FEEDBACK
+	connect( gripKpDecreaseButton, SIGNAL(clicked()),	this, SLOT(slotgripKpDecrease()) );
+	connect( gripKpIncreaseButton, SIGNAL(clicked()),	this, SLOT(slotgripKpIncrease()) );
+	connect( gripKdDecreaseButton, SIGNAL(clicked()),	this, SLOT(slotgripKdDecrease()) );
+	connect( gripKdIncreaseButton, SIGNAL(clicked()),	this, SLOT(slotgripKdIncrease()) );
+	connect (checkBox_GRIPPER_FORCE,SIGNAL( stateChanged(int)),this,SLOT(slotEnableGripForce()));
+
+
 	connect( &m_timer,			SIGNAL(timeout()),		this, SLOT(slotUpdateTimer()) );
 	connect( tabWidget,			SIGNAL(currentChanged(QWidget*)), this, SLOT(slotTabChange()) );
 
@@ -144,17 +153,12 @@ ServerNForm::ServerNForm( Q_UINT16 port )
 	connect(DC_newButton,    SIGNAL( clicked() ),  this, SLOT(slotDCNew()));
 	connect(DC_saveButton,   SIGNAL(toggled(bool)),this, SLOT(slotDCStart(bool)));
 
-	//connect(RB_View_Endoscope, SIGNAL(clicked()), this, SLOT(slotSelectView()));
-	//connect( RB_View_OR,       SIGNAL(clicked()), this, SLOT(slotSelectView()));
-	//connect( RB_View_OR2,      SIGNAL(clicked()), this, SLOT(slotSelectView()));
 	connect (checkBox_GRIPPER,SIGNAL( stateChanged(int)),this,SLOT(slotEnableGripper()));
 	connect (checkBox_ORI,SIGNAL( stateChanged(int)),this,SLOT(slotEnableOrientation()));
 	connect (checkBox_POS,SIGNAL( stateChanged(int)),this,SLOT(slotEnablePosition()));
 	connect (checkBox_fullscreen,SIGNAL( stateChanged(int)),this,SLOT(slotFullscreen()));
-	//connect (checkBox_POS,SIGNAL(isChecked),this,SLOT(slotEnablePosition()));
+
 	connect( cB_IP, SIGNAL(activated(int)), this, SLOT(slotIPChanged(int)) );
-	//connect( cB_RightTool, SIGNAL(activated(int)), this, SLOT(slotRightToolChanged(int)) );
-	//connect( cB_LeftTool,  SIGNAL(activated(int)), this, SLOT(slotLeftToolChanged(int)) );
 	connect( camAngle1,  SIGNAL(valueChanged(double)), this, SLOT(slotCamAngleChanged()) );
 	connect( camAngle2,  SIGNAL(valueChanged(double)), this, SLOT(slotCamAngleChanged()) );
 	connect( camAngle3,  SIGNAL(valueChanged(double)), this, SLOT(slotCamAngleChanged()) );
@@ -218,6 +222,13 @@ void ServerNForm::keyPressEvent(QKeyEvent *e)
 				camAngle1->setEnabled(FALSE);
 				camAngle2->setEnabled(FALSE);
 				camAngle3->setEnabled(FALSE);
+
+				//GRIPPER
+				gripKpDecreaseButton->setEnabled(FALSE);
+				gripKpIncreaseButton->setEnabled(FALSE);
+				gripKdDecreaseButton->setEnabled(FALSE);
+				gripKdIncreaseButton->setEnabled(FALSE);
+				checkBox_GRIPPER_FORCE->setEnabled(FALSE);
 			}
 			break;
 		}
@@ -247,6 +258,13 @@ void ServerNForm::keyPressEvent(QKeyEvent *e)
 					checkBox_ORI->setEnabled(TRUE);
 					checkBox_fullscreen->setEnabled(TRUE);
 					checkBox_POS->setEnabled(TRUE);
+
+							//GRIPPER
+				gripKpDecreaseButton->setEnabled(TRUE);
+				gripKpIncreaseButton->setEnabled(TRUE);
+				gripKdDecreaseButton->setEnabled(TRUE);
+				gripKdIncreaseButton->setEnabled(TRUE);
+				checkBox_GRIPPER_FORCE->setEnabled(TRUE);
 			}
 			UI2Madata.flag01 &= (ALL_ONES - FPEDAL_RIGHT);
 			break;
@@ -420,6 +438,15 @@ void ServerNForm::slotStart()
 		okButton->setEnabled(TRUE);
 		A_okButton->setEnabled(TRUE);
 		loginButton->setEnabled(TRUE);
+
+									//GRIPPER
+				gripKpDecreaseButton->setEnabled(TRUE);
+				gripKpIncreaseButton->setEnabled(TRUE);
+				gripKdDecreaseButton->setEnabled(TRUE);
+				gripKdIncreaseButton->setEnabled(TRUE);
+				checkBox_GRIPPER_FORCE->setEnabled(TRUE);
+
+				//TODO: function to enable/disable all relevant (force, scaling, etc.)
 	}
 	UI2Madata.flag01 &= (ALL_ONES - FPEDAL_RIGHT - FPEDAL_MIDDLE - FPEDAL_LEFT);
 	updateMaster();
@@ -490,7 +517,6 @@ void ServerNForm::slotGScaleDecrease()
 	if(UI2Madata.scale_grip < 0)
 		UI2Madata.scale_grip = 0;
 	scaleGLineEdit->setText(QString("%1").arg((double)UI2Madata.scale_grip));
-
 	updateMaster();
 }
 
@@ -576,6 +602,11 @@ int ServerNForm::EnableMainGUI(int flag)
 		scalePIncreaseButton->setEnabled(TRUE);
 		scaleGDecreaseButton->setEnabled(TRUE);
 		scaleGIncreaseButton->setEnabled(TRUE);
+		gripKdDecreaseButton->setEnabled(TRUE);
+		gripKdIncreaseButton->setEnabled(TRUE);
+		gripKpDecreaseButton->setEnabled(TRUE);
+		gripKpIncreaseButton->setEnabled(TRUE);
+		checkBox_GRIPPER_FORCE->setEnabled(TRUE);
 		checkBox_GRIPPER->setEnabled(TRUE);
 		checkBox_ORI->setEnabled(TRUE);
 		checkBox_POS->setEnabled(TRUE);
@@ -613,6 +644,10 @@ int ServerNForm::EnableMainGUI(int flag)
 		scalePIncreaseButton->setEnabled(FALSE);
 		scaleGDecreaseButton->setEnabled(FALSE);
 		scaleGIncreaseButton->setEnabled(FALSE);
+			gripKdDecreaseButton->setEnabled(FALSE);
+		gripKdIncreaseButton->setEnabled(FALSE);
+		gripKpDecreaseButton->setEnabled(FALSE);
+		gripKpIncreaseButton->setEnabled(FALSE);
 		camAngle1->setEnabled(FALSE);
 		camAngle2->setEnabled(FALSE);
 		camAngle3->setEnabled(FALSE);
@@ -772,7 +807,57 @@ void ServerNForm::setPaletteBackgroundColor_ksy(QPushButton* pb, QColor c) {
 	pb->setPalette(palette);
 }
 
+// GRIP FORCE SLOTS!
+void ServerNForm::slotgripKpDecrease() 
+{
+	tabWidget->setFocus();
+	UI2Madata.grip_force_Kp -= 5;
+	if(UI2Madata.grip_force_Kp < 0)
+		UI2Madata.grip_force_Kp = 0;
+	gripKpLineEdit->setText(QString("%1").arg((double)UI2Madata.grip_force_Kp));
+	updateMaster();
+}
 
+void ServerNForm::slotgripKpIncrease() 
+{
+	tabWidget->setFocus();
+	UI2Madata.grip_force_Kp += 5;
+	if(UI2Madata.grip_force_Kp > GRIP_FORCE_KP_MAX)
+		UI2Madata.grip_force_Kp = GRIP_FORCE_KP_MAX;
+	gripKpLineEdit->setText(QString("%1").arg((double)UI2Madata.grip_force_Kp));
+
+	updateMaster();
+}
+void ServerNForm::slotgripKdDecrease() 
+{
+	tabWidget->setFocus();
+	UI2Madata.grip_force_Kd -= 1;
+	if(UI2Madata.grip_force_Kd < 0)
+		UI2Madata.grip_force_Kd = 0;
+	gripKdLineEdit->setText(QString("%1").arg((double)UI2Madata.grip_force_Kd/(double)GRIP_FORCE_KD_MAX));
+	updateMaster();
+}
+
+void ServerNForm::slotgripKdIncrease() 
+{
+	tabWidget->setFocus();
+	UI2Madata.grip_force_Kd += 1;
+	if(UI2Madata.grip_force_Kd > GRIP_FORCE_KD_MAX)
+		UI2Madata.grip_force_Kd = GRIP_FORCE_KD_MAX;
+	gripKdLineEdit->setText(QString("%1").arg((double)UI2Madata.grip_force_Kd/(double)GRIP_FORCE_KD_MAX));
+
+	updateMaster();
+}
+void ServerNForm::slotEnableGripForce()
+{
+	tabWidget->setFocus();
+	if (checkBox_GRIPPER_FORCE->isChecked())
+		UI2Madata.enable_gripforce=true;
+	else
+		UI2Madata.enable_gripforce=false;
+	updateMaster();
+	writeLog("ChangeGripForce","2");
+}
 
 ///////////////////////////////////////////////////////////////////////
 ////////////////// BEGIN: NETWORKING FUNCTIONS ////////////////////////
@@ -829,10 +914,13 @@ void ServerNForm::slotDataExchangeInit()
 		UI2Madata.tick = 0;
 		UI2Madata.scale_pos = SCALE_POS_INIT_VALUE; // will be divided by 100
 		UI2Madata.scale_grip = SCALE_GRIP_INIT_VALUE; // will be divided by 100
+		UI2Madata.grip_force_Kd = GRIP_FORCE_KD_INIT_VALUE;
+		UI2Madata.grip_force_Kp = GRIP_FORCE_KP_INIT_VALUE;
 		UI2Madata.checksum = checksumUI2MA(&UI2Madata);
 		UI2Madata.enable_grip=true;
 		UI2Madata.enable_orientation=true;
 		UI2Madata.enable_position=true;
+		UI2Madata.enable_gripforce=true;
 		UI2Madata.fullscreen= false;
 		UI2Madata.setCamOff = false;
 		// if not already logged in, show login screen.	
@@ -846,12 +934,16 @@ void ServerNForm::slotDataExchangeInit()
 		UI2Madata.tick = 0;
 		UI2Madata.scale_pos = 0; // will be divided by 100
 		UI2Madata.scale_grip = 0; // will be the same
+		UI2Madata.grip_force_Kp = 0; // will be the same
+		UI2Madata.grip_force_Kd = 0; // will be the same
 		UI2Madata.checksum = checksumUI2MA(&UI2Madata);
 	}
 	qDebug("sending init packet: s:%d, f:%d, f:%d, a:%d, t:%d, check:%d", UI2Madata.scale_pos,UI2Madata.scale_grip, UI2Madata.flag01, UI2Madata.UDPaddr, (int)UI2Madata.tick, UI2Madata.checksum);
 	infoText->append( tr("Initial data was sended %1\n").arg(UI2Madata.flag01));
 	scalePLineEdit->setText(QString("%1").arg((double)UI2Madata.scale_pos/(double)SCALE_POS_MAX));
 	scaleGLineEdit->setText(QString("%1").arg((double)UI2Madata.scale_grip));
+	gripKpLineEdit->setText(QString("%1").arg((double)UI2Madata.grip_force_Kp/(double)SCALE_POS_MAX));
+	gripKdLineEdit->setText(QString("%1").arg((double)UI2Madata.grip_force_Kd/(double)GRIP_FORCE_KD_MAX));
 
 	updateMaster(); // Important: reply to init packet with initial state.
 }//END: slotDataExchangeInit()
@@ -898,6 +990,8 @@ void ServerNForm::updateMaster()
 		// set zeros
 		data.scale_pos = 0;
 		data.scale_grip = 0;
+		data.grip_force_Kp=0;
+		data.grip_force_Kd=0;
 		data.tick = 0;
 	}
 	data.checksum = checksumUI2MA(&data);

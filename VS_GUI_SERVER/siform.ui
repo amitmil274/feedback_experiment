@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1087</width>
-    <height>733</height>
+    <width>1094</width>
+    <height>717</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,7 +37,7 @@
     <bool>true</bool>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -1207,6 +1207,143 @@ Press to log-out</string>
        <string>Y</string>
       </property>
      </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_gripKp">
+     <property name="geometry">
+      <rect>
+       <x>640</x>
+       <y>380</y>
+       <width>330</width>
+       <height>105</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Grip Force Kp</string>
+     </property>
+     <widget class="QPushButton" name="gripKpDecreaseButton">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>28</y>
+        <width>100</width>
+        <height>70</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;&lt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="gripKpIncreaseButton">
+      <property name="geometry">
+       <rect>
+        <x>225</x>
+        <y>28</y>
+        <width>100</width>
+        <height>70</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&gt;&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="gripKpLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>33</y>
+        <width>110</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignHCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_gripKd">
+     <property name="geometry">
+      <rect>
+       <x>640</x>
+       <y>500</y>
+       <width>330</width>
+       <height>105</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Grip Force Kd</string>
+     </property>
+     <widget class="QPushButton" name="gripKdDecreaseButton">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>28</y>
+        <width>100</width>
+        <height>70</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;&lt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="gripKdIncreaseButton">
+      <property name="geometry">
+       <rect>
+        <x>225</x>
+        <y>28</y>
+        <width>100</width>
+        <height>70</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&gt;&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="gripKdLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>33</y>
+        <width>110</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignHCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_GRIPPER_FORCE">
+     <property name="geometry">
+      <rect>
+       <x>650</x>
+       <y>360</y>
+       <width>311</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>ENABLE GRIPPER FORCE FEEDBACK</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
     </widget>
    </widget>
    <widget class="QWidget" name="tab_2">

@@ -62,8 +62,8 @@ bool ExpOn = false;
 
 extern stMA2UI_DATA Ma2UIdata;
 extern stUI2MA_DATA UI2Madata;
-double scale_pos;
-double scale_grip;
+double scale_pos, scale_grip;
+double grip_force_Kp, grip_force_Kd;
 double base_z;
 double base_y;
 double base_x;
@@ -402,80 +402,83 @@ int filtSize=4;
 void HapticData::getGripForce(int gripType)
 {
 	gripForce=0;
-	int KG;
-	if (gripType==1)
+	if (enable_gripforce)
 	{
+		int KG;
+		if (gripType==1)
+		{
 
-		if(gripper[0]<0.1)
-			KG=40;
-		else if(gripper[0]<0.2)
-			KG=4/gripper[0];
+			if(gripper[0]<0.1)
+				KG=40;
+			else if(gripper[0]<0.2)
+				KG=4/gripper[0];
+			else
+				KG=20;
+
+			// END OF DAVINCI LIKE GRIPPER FORCE FEEDBACK
+			gripForce=(0.5-gripper[0])*KG;
+		}
 		else
-			KG=20;
-
-		// END OF DAVINCI LIKE GRIPPER FORCE FEEDBACK
-		gripForce=(0.5-gripper[0])*KG;
-	}
-	else
-	{
-
-		// POSITION EXCHANGE GRIPPER FORCE FEEDBACK
-		double tmpGrip=gripper[0];
-		double tmpVel=vgrip[0];
-		//tmpGrip-=3*M_PI/180;
-		tmpGrip*=scale_grip;
-		tmpVel*=scale_grip;
-		double gripDiff=-(tmpGrip-ravenData.grasp[0]);
-		//double velDiff=-(tmpVel-ravenData.grasp_vel[0]);
-		double velDiff=-(tmpVel);
-
-		if (!filterRdy)
 		{
-			for (int i=0;i<filtSize;i++)
+
+			// POSITION EXCHANGE GRIPPER FORCE FEEDBACK
+			double tmpGrip=gripper[0];
+			double tmpVel=vgrip[0];
+			//tmpGrip-=3*M_PI/180;
+			tmpGrip*=scale_grip;
+			tmpVel*=scale_grip;
+			double gripDiff=-(tmpGrip-ravenData.grasp[0]);
+			//double velDiff=-(tmpVel-ravenData.grasp_vel[0]);
+			double velDiff=-(tmpVel);
+
+			if (!filterRdy)
 			{
-				oldGrip[i] = gripDiff;
-				oldFiltGrip[i] = gripDiff;
-				oldVel[i] = velDiff;
-				oldFiltVel[i] = velDiff;
-				filterRdy=true;
+				for (int i=0;i<filtSize;i++)
+				{
+					oldGrip[i] = gripDiff;
+					oldFiltGrip[i] = gripDiff;
+					oldVel[i] = velDiff;
+					oldFiltVel[i] = velDiff;
+					filterRdy=true;
+				}
 			}
+			//Compute filtered motor angle
+			filtGrip = B[0]*gripDiff;;
+			filtVel = B[0]*velDiff;;
+			for (int i=1;i<filtSize;i++)
+			{
+				filtGrip += B[i] * oldGrip[i-1] + A[i] * oldFiltGrip[i-1];
+				filtVel += B[i] * oldVel[i-1] + A[i] * oldFiltVel[i-1];
+			}
+			for (int i=filtSize-1;i>0;i--)
+			{
+				oldGrip[i] = oldGrip[i-1];
+				oldFiltGrip[i] = oldFiltGrip[i-1];
+				oldVel[i] = oldVel[i-1];
+				oldFiltVel[i] = oldFiltVel[i-1];
+			}
+			oldGrip[0] = gripDiff;
+			oldFiltGrip[0] = filtGrip;
+			oldVel[0] = velDiff;
+			oldFiltVel[0] = filtVel;
+			/*if(filtGrip<0.2)
+			KG=0;
+			else if(filtGrip<0.4)
+			KG=(filtGrip-0.2)*100;
+			else*/
+			KG=20;
+			/*KG=30;*/
+			//KG=0;
+			/*if (filtGrip>3)
+			filterRdy=false;*/
+			double Kp = grip_force_Kp , Kd = grip_force_Kd;
+			gripForce = Kp*filtGrip+Kd*filtVel;
+			cout.setf(ios::fixed,ios::floatfield);
+			cout.precision(3);
+			cout << '\r' << "GF: " <<std::setw(5)<< gripForce << " diff: "<<std::setw(5) << tmpGrip << " raven: "<<std::setw(5)<< ravenData.grasp[0] << flush;
 		}
-		//Compute filtered motor angle
-		filtGrip = B[0]*gripDiff;;
-		filtVel = B[0]*velDiff;;
-		for (int i=1;i<filtSize;i++)
-		{
-			filtGrip += B[i] * oldGrip[i-1] + A[i] * oldFiltGrip[i-1];
-			filtVel += B[i] * oldVel[i-1] + A[i] * oldFiltVel[i-1];
-		}
-		for (int i=filtSize-1;i>0;i--)
-		{
-			oldGrip[i] = oldGrip[i-1];
-			oldFiltGrip[i] = oldFiltGrip[i-1];
-			oldVel[i] = oldVel[i-1];
-			oldFiltVel[i] = oldFiltVel[i-1];
-		}
-		oldGrip[0] = gripDiff;
-		oldFiltGrip[0] = filtGrip;
-		oldVel[0] = velDiff;
-		oldFiltVel[0] = filtVel;
-		/*if(filtGrip<0.2)
-		KG=0;
-		else if(filtGrip<0.4)
-		KG=(filtGrip-0.2)*100;
-		else*/
-		KG=20;
-		/*KG=30;*/
-		//KG=0;
-		/*if (filtGrip>3)
-		filterRdy=false;*/
-		double Kp = 20 , Kd = 0.005;
-		gripForce = Kp*filtGrip+Kd*filtVel;
-		cout.setf(ios::fixed,ios::floatfield);
-		cout.precision(3);
-		cout << '\r' << "GF: " <<std::setw(5)<< gripForce << " diff: "<<std::setw(5) << tmpGrip << " raven: "<<std::setw(5)<< ravenData.grasp[0] << flush;
 	}
 	if (gripForce<0)
 		gripForce=0;
-	
+
 }

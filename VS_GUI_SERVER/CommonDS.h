@@ -45,10 +45,16 @@
 #define FPEDAL_MIDDLE	0x00200000
 #define FPEDAL_LEFT	0x00400000
 
+// SCALING
 #define SCALE_POS_MAX 	100	//0 ~ 100 scale should be changed 0 ~ 1
 #define SCALE_POS_INIT_VALUE 40	//5 means 0.05
 #define SCALE_GRIP_MAX 	10	//0 ~ 10 scale 
 #define SCALE_GRIP_INIT_VALUE 5	
+// GRIP FORCE
+#define GRIP_FORCE_KP_MAX 	200 	
+#define GRIP_FORCE_KD_MAX 	1000
+#define GRIP_FORCE_KP_INIT_VALUE 10	
+#define GRIP_FORCE_KD_INIT_VALUE 1	
 
 typedef struct{
 	unsigned int tick;
@@ -69,6 +75,7 @@ typedef struct{
 	unsigned int tick;
 	int flag01;
 	int UDPaddr;
+	// SCALING
 	int scale_pos;
 	int scale_grip;
 	int checksum;
@@ -76,9 +83,13 @@ typedef struct{
 	int camAngle2[3];
 	int useITP;          // Specifies coordinate frame mode
 	bool zero;
+	// FEATURES ENABLED
 	bool enable_grip;
 	bool enable_orientation;
 	bool enable_position;
+	bool enable_gripforce;
+	double grip_force_Kd, grip_force_Kp;
+
 	bool fullscreen;
 	double camOffLX, camOffLY, camOffRX, camOffRY;
 	bool setCamOff;

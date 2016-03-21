@@ -61,6 +61,8 @@ extern int useITP;
 //Global variable for world coordinate scale uniform in all 3 axis.
 extern double scale_pos;
 extern double scale_grip;
+extern double grip_force_Kp;
+extern double grip_force_Kd;
 extern double base_x;
 extern double base_y;
 extern double base_z;
@@ -133,6 +135,8 @@ int Sigma_Comm::Check_UI2MA(int message)
 	if(pUI2Madata->checksum == (pUI2Madata->scale_pos + pUI2Madata->scale_grip + pUI2Madata->flag01 + pUI2Madata->UDPaddr+ (int)pUI2Madata->tick)) { 
 		scale_pos= (double)pUI2Madata->scale_pos/100.0;
 		scale_grip= (double)pUI2Madata->scale_grip;
+		grip_force_Kp=(double)pUI2Madata->grip_force_Kp;
+		grip_force_Kd=(double)pUI2Madata->grip_force_Kd/1000;
 
 		// Set camera angle 1
 		int count=0;
@@ -156,28 +160,35 @@ int Sigma_Comm::Check_UI2MA(int message)
 		if (hapticData.enable_gripper != pUI2Madata->enable_grip){
 			hapticData.enable_gripper = pUI2Madata->enable_grip;
 			if (hapticData.enable_gripper)
-			cout << "enabled gripper"<<endl;
+				cout << "enabled gripper"<<endl;
 			else
 				cout << "disabled gripper"<<endl;
 		}
-				if (hapticData.enable_position != pUI2Madata->enable_position){
+		if (hapticData.enable_position != pUI2Madata->enable_position){
 			hapticData.enable_position = pUI2Madata->enable_position;
 			if (hapticData.enable_position)
-			cout << "enabled position"<<endl;
+				cout << "enabled position"<<endl;
 			else
 				cout << "disabled position"<<endl;
 		}
-						if (hapticData.enable_orientation != pUI2Madata->enable_orientation){
+		if (hapticData.enable_orientation != pUI2Madata->enable_orientation){
 			hapticData.enable_orientation = pUI2Madata->enable_orientation;
 			if (hapticData.enable_orientation)
-			cout << "enabled orientation"<<endl;
+				cout << "enabled orientation"<<endl;
 			else
 				cout << "disabled orientation"<<endl;
+		}
+		if (hapticData.enable_gripforce != pUI2Madata->enable_gripforce){
+			hapticData.enable_gripforce = pUI2Madata->enable_gripforce;
+			if (hapticData.enable_gripforce)
+				cout << "enabled grip force"<<endl;
+			else
+				cout << "disabled grip force"<<endl;
 		}
 		if (hapticData.fullscreen != pUI2Madata->fullscreen){
 			hapticData.fullscreen = pUI2Madata->fullscreen;
 			vsScreenSize (hapticData.fullscreen);
-				}
+		}
 		if(pUI2Madata->setCamOff)
 		{
 			double offx[2]={pUI2Madata->camOffLX,pUI2Madata->camOffRX};
@@ -286,10 +297,10 @@ void Sigma_Comm::Send_UDP()
 
 	if(Check_Flag(BASIC_START)) {
 		try {
-				udpsocket.sendTo(&msgHeader,sizeof(u_struct),addr_Robot,port_Robot);
-				//cout << "out" << endl;
-			}
-		
+			udpsocket.sendTo(&msgHeader,sizeof(u_struct),addr_Robot,port_Robot);
+			//cout << "out" << endl;
+		}
+
 		catch (SocketException SE){
 			cerr << "failed to send_UDP\n";
 		}
@@ -298,7 +309,7 @@ void Sigma_Comm::Send_UDP()
 
 bool Sigma_Comm::Recv_UDP()
 {
-		fd_set ravenSet;
+	fd_set ravenSet;
 	TIMEVAL timeout = {TIMEOUT_SECS, TIMEOUT_USECS};
 	int nfound;
 	int the_udpsock;
@@ -313,15 +324,15 @@ bool Sigma_Comm::Recv_UDP()
 			timeout.tv_usec = TIMEOUT_USECS;
 			if(select( 1 , &ravenSet, NULL, NULL, &timeout ))
 			{
-			memset(&rcvHeader,0,sizeof(v_struct));
-			udpsocket.recv(&rcvHeader,sizeof(v_struct));
-			//cout<<ravenData.px[0]<<"\t"<<rcvHeader.px[0]<<"\t"<<ravenData.grasp[0]<<"\t"<<rcvHeader.grasp[0]<<endl;
+				memset(&rcvHeader,0,sizeof(v_struct));
+				udpsocket.recv(&rcvHeader,sizeof(v_struct));
+				//cout<<ravenData.px[0]<<"\t"<<rcvHeader.px[0]<<"\t"<<ravenData.grasp[0]<<"\t"<<rcvHeader.grasp[0]<<endl;
 
-			ravenData=rcvHeader;
-			//cout << "in" << endl;
+				ravenData=rcvHeader;
+				//cout << "in" << endl;
 			}
-//			else
-				//cout << "in2" << endl;
+			//			else
+			//cout << "in2" << endl;
 		}
 		catch (SocketException SE){
 			cerr << "failed to get_UDP\n";
