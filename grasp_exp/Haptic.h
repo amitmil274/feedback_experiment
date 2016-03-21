@@ -17,11 +17,12 @@ public:
 	void moveto();
 	void InitHapticDevice();
 	void SetHapticBaseAngle(double x,double y, double z);
-	double getGripForce(int gripType);
+	void getGripForce(int gripType);
 	Vector3d position[2];
 	Vector3d velocity[2];
 	double gripper[2];
 	double vgrip[2];
+	double gripForce;
 	Vector3d orientation[2];
 	float InitHandPos;
 	int ForceCount;

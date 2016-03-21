@@ -112,7 +112,7 @@ void* HapticsLoop(void* pUserData)
 	double d[3]={0,0,0};
 	// start haptic simulation
 	SimulationOn       = true;
-	
+
 
 	// start with no force
 	dhdEnableForce (DHD_ON, devHandle);
@@ -166,7 +166,7 @@ void* HapticsLoop(void* pUserData)
 		xform[0]  << r[0][0], r[0][1], r[0][2],
 			r[1][0], r[1][1], r[1][2],
 			r[2][0], r[2][1], r[2][2];
-		 
+
 		Matrix3d sigma2ITP;
 		if (hapticData.enable_orientation)
 			sigma2ITP<< -1 , 0 , 0 ,
@@ -177,7 +177,7 @@ void* HapticsLoop(void* pUserData)
 			0 ,0 , 0,
 			0, 0, 0;
 		xform[0].applyOnTheRight(sigma2ITP);
-		
+
 		qCurr[0]=Quaterniond(xform[0]);
 
 
@@ -190,9 +190,9 @@ void* HapticsLoop(void* pUserData)
 		hapticData.vgrip[1]=Vgrip[1];
 		hapticData.orientation[0]=Orientation[0];		
 		gripType=2;
-		double gripForceFeedback= hapticData.getGripForce(gripType);
-	/*				if (dhdSetForceAndGripperForce (K*-d[0], K*-d[1], K*-d[2],gripForceFeedback) < DHD_NO_ERROR) 
-				printf ("error: cannot set force (%s)\n", dhdErrorGetLastStr());*/
+		hapticData.getGripForce(gripType);
+		/*				if (dhdSetForceAndGripperForce (K*-d[0], K*-d[1], K*-d[2],gripForceFeedback) < DHD_NO_ERROR) 
+		printf ("error: cannot set force (%s)\n", dhdErrorGetLastStr());*/
 		//gripForceFeedback=0;
 		K=0;
 		if (WriteToFile)
@@ -204,17 +204,17 @@ void* HapticsLoop(void* pUserData)
 			filemaster.orientation=Orientation[0];
 		}
 		ravenPosition[0].x()=(-ravenData.py[0]);
-				ravenPosition[0].y()=(-ravenData.pz[0]);
-				ravenPosition[0].z()=ravenData.px[0];
+		ravenPosition[0].y()=(-ravenData.pz[0]);
+		ravenPosition[0].z()=ravenData.px[0];
 		// COMMUNICATION
 		if( comm.Check_Flag(FPEDAL_RIGHT) && comm.Check_Flag(BASIC_START) )
 		{
-			if (dhdSetForceAndGripperForce (K*-d[0], K*-d[1], K*-d[2],gripForceFeedback) < DHD_NO_ERROR) 
+			if (dhdSetForceAndGripperForce (K*-d[0], K*-d[1], K*-d[2],hapticData.gripForce) < DHD_NO_ERROR) 
 				printf ("error: cannot set force (%s)\n", dhdErrorGetLastStr());
 			if (prevpedal!=footpedal)
 			{
 				firstraven=false;
-				
+
 				deltaPosition[0]= scale_pos*(Position[0]-zerobase)-ravenPosition[0];
 				continue;
 			}
@@ -226,7 +226,7 @@ void* HapticsLoop(void* pUserData)
 			else
 				dPosition[0] << scale_pos*(Position[0]-zerobase); //0,0,0;
 			if (hapticData.enable_orientation)
-			qIncr[0]=qPrev[0].inverse() * qCurr[0];
+				qIncr[0]=qPrev[0].inverse() * qCurr[0];
 			else
 				qIncr[0]=q_identity;
 			//qIncr[0]=qCurr[0]; //TRYING TO IMPLEMENT ABSOLUTE
@@ -254,8 +254,8 @@ void* HapticsLoop(void* pUserData)
 
 		}
 		/*cout.setf(ios::fixed,ios::floatfield);
-			cout.precision(3);
-			cout << '\r' << "x: " <<std::setw(5)<< dPosition[0].x() << " y: "<<std::setw(5) << dPosition[0].y() << " z: "<<std::setw(5)<< dPosition[0].z() << flush;*/
+		cout.precision(3);
+		cout << '\r' << "x: " <<std::setw(5)<< dPosition[0].x() << " y: "<<std::setw(5) << dPosition[0].y() << " z: "<<std::setw(5)<< dPosition[0].z() << flush;*/
 		qPrev[0] = qCurr[0];
 
 		rl2sui = 3-comm.Check_Flag(FPEDAL_RIGHT);
@@ -390,90 +390,92 @@ void Ori_feedback(Eigen::Vector3d ori)
 	//	dhdSetForceAndTorque(0,0,0,force.x(),force.y(),force.z());
 	//}
 }
-	double oldGrip[7];
-	double oldFiltGrip[7];
-	double filtGrip=0;
-	double oldVel[7];
-	double oldFiltVel[7];
-	double filtVel=0;
-	float B[] = {0.0002196,  0.0006588,  0.0006588,  0.0002196};
-	float A[] = {1.0000,   2.7488, -2.5282,  0.7776};
-	int filtSize=4;
-double HapticData::getGripForce(int gripType)
+double oldGrip[7];
+double oldFiltGrip[7];
+double filtGrip=0;
+double oldVel[7];
+double oldFiltVel[7];
+double filtVel=0;
+float B[] = {0.0002196,  0.0006588,  0.0006588,  0.0002196};
+float A[] = {1.0000,   2.7488, -2.5282,  0.7776};
+int filtSize=4;
+void HapticData::getGripForce(int gripType)
 {
-	double gripForce=0;
+	gripForce=0;
 	int KG;
 	if (gripType==1)
-		{
+	{
 
-			if(gripper[0]<0.1)
-				KG=40;
-			else if(gripper[0]<0.2)
-				KG=4/gripper[0];
-			else
-				KG=20;
-
-			// END OF DAVINCI LIKE GRIPPER FORCE FEEDBACK
-			gripForce=(0.5-gripper[0])*KG;
-		}
+		if(gripper[0]<0.1)
+			KG=40;
+		else if(gripper[0]<0.2)
+			KG=4/gripper[0];
 		else
+			KG=20;
+
+		// END OF DAVINCI LIKE GRIPPER FORCE FEEDBACK
+		gripForce=(0.5-gripper[0])*KG;
+	}
+	else
+	{
+
+		// POSITION EXCHANGE GRIPPER FORCE FEEDBACK
+		double tmpGrip=gripper[0];
+		double tmpVel=vgrip[0];
+		//tmpGrip-=3*M_PI/180;
+		tmpGrip*=scale_grip;
+		tmpVel*=scale_grip;
+		double gripDiff=-(tmpGrip-ravenData.grasp[0]);
+		//double velDiff=-(tmpVel-ravenData.grasp_vel[0]);
+		double velDiff=-(tmpVel);
+
+		if (!filterRdy)
 		{
-
-			// POSITION EXCHANGE GRIPPER FORCE FEEDBACK
-			double tmpGrip=gripper[0];
-			double tmpVel=vgrip[0];
-			tmpGrip-=3*M_PI/180;
-			tmpGrip*=scale_grip;
-			tmpVel*=scale_grip;
-			double gripDiff=-(tmpGrip-ravenData.grasp[0]);
-			//double velDiff=-(tmpVel-ravenData.grasp_vel[0]);
-			double velDiff=-(tmpVel);
-
-			if (!filterRdy)
+			for (int i=0;i<filtSize;i++)
 			{
-				for (int i=0;i<filtSize;i++)
-				{
-					oldGrip[i] = gripDiff;
-					oldFiltGrip[i] = gripDiff;
-					oldVel[i] = velDiff;
-					oldFiltVel[i] = velDiff;
-					filterRdy=true;
-				}
+				oldGrip[i] = gripDiff;
+				oldFiltGrip[i] = gripDiff;
+				oldVel[i] = velDiff;
+				oldFiltVel[i] = velDiff;
+				filterRdy=true;
 			}
-			//Compute filtered motor angle
-			filtGrip = B[0]*gripDiff;;
-			filtVel = B[0]*velDiff;;
-			for (int i=1;i<filtSize;i++)
-			{
-				filtGrip += B[i] * oldGrip[i-1] + A[i] * oldFiltGrip[i-1];
-					filtVel += B[i] * oldVel[i-1] + A[i] * oldFiltVel[i-1];
-			}
-			for (int i=filtSize-1;i>0;i--)
-			{
-				oldGrip[i] = oldGrip[i-1];
-				oldFiltGrip[i] = oldFiltGrip[i-1];
-				oldVel[i] = oldVel[i-1];
-				oldFiltVel[i] = oldFiltVel[i-1];
-			}
-			oldGrip[0] = gripDiff;
-			oldFiltGrip[0] = filtGrip;
-			oldVel[0] = velDiff;
-			oldFiltVel[0] = filtVel;
-			/*if(filtGrip<0.2)
-				KG=0;
-			else if(filtGrip<0.4)
-				KG=(filtGrip-0.2)*100;
-			else*/
-				KG=20;
-			/*KG=30;*/
-			//KG=0;
-			/*if (filtGrip>3)
-				filterRdy=false;*/
-			double Kp = 1000 , Kd = 0.002;
-			double gripForce = Kp*filtGrip+Kd*filtVel;
-			cout.setf(ios::fixed,ios::floatfield);
-			cout.precision(3);
-			cout << '\r' << "GF: " <<std::setw(5)<< filtGrip << " diff: "<<std::setw(5) << tmpGrip << " raven: "<<std::setw(5)<< ravenData.grasp[0] << flush;
 		}
-	return gripForce;
+		//Compute filtered motor angle
+		filtGrip = B[0]*gripDiff;;
+		filtVel = B[0]*velDiff;;
+		for (int i=1;i<filtSize;i++)
+		{
+			filtGrip += B[i] * oldGrip[i-1] + A[i] * oldFiltGrip[i-1];
+			filtVel += B[i] * oldVel[i-1] + A[i] * oldFiltVel[i-1];
+		}
+		for (int i=filtSize-1;i>0;i--)
+		{
+			oldGrip[i] = oldGrip[i-1];
+			oldFiltGrip[i] = oldFiltGrip[i-1];
+			oldVel[i] = oldVel[i-1];
+			oldFiltVel[i] = oldFiltVel[i-1];
+		}
+		oldGrip[0] = gripDiff;
+		oldFiltGrip[0] = filtGrip;
+		oldVel[0] = velDiff;
+		oldFiltVel[0] = filtVel;
+		/*if(filtGrip<0.2)
+		KG=0;
+		else if(filtGrip<0.4)
+		KG=(filtGrip-0.2)*100;
+		else*/
+		KG=20;
+		/*KG=30;*/
+		//KG=0;
+		/*if (filtGrip>3)
+		filterRdy=false;*/
+		double Kp = 20 , Kd = 0.005;
+		gripForce = Kp*filtGrip+Kd*filtVel;
+		cout.setf(ios::fixed,ios::floatfield);
+		cout.precision(3);
+		cout << '\r' << "GF: " <<std::setw(5)<< gripForce << " diff: "<<std::setw(5) << tmpGrip << " raven: "<<std::setw(5)<< ravenData.grasp[0] << flush;
+	}
+	if (gripForce<0)
+		gripForce=0;
+	
 }
