@@ -189,8 +189,8 @@ void* HapticsLoop(void* pUserData)
 		hapticData.vgrip[0]=Vgrip[0];
 		hapticData.vgrip[1]=Vgrip[1];
 		hapticData.orientation[0]=Orientation[0];		
-		gripType=2;
-		hapticData.getGripForce(gripType);
+		gripType=1;
+		hapticData.getGripForce();
 		/*				if (dhdSetForceAndGripperForce (K*-d[0], K*-d[1], K*-d[2],gripForceFeedback) < DHD_NO_ERROR) 
 		printf ("error: cannot set force (%s)\n", dhdErrorGetLastStr());*/
 		//gripForceFeedback=0;
@@ -399,28 +399,26 @@ double filtVel=0;
 float B[] = {0.0002196,  0.0006588,  0.0006588,  0.0002196};
 float A[] = {1.0000,   2.7488, -2.5282,  0.7776};
 int filtSize=4;
-void HapticData::getGripForce(int gripType)
+void HapticData::getGripForce()
 {
+	double Kp = grip_force_Kp , Kd = grip_force_Kd;
 	gripForce=0;
 	if (enable_gripforce)
 	{
-		int KG;
-		if (gripType==1)
+		switch (gripType)
 		{
-
+		case 1:
 			if(gripper[0]<0.1)
-				KG=40;
+				Kp=Kp;
 			else if(gripper[0]<0.2)
-				KG=4/gripper[0];
+				Kp=(Kp/10)/gripper[0];
 			else
-				KG=20;
+				Kp=Kp/2;
 
 			// END OF DAVINCI LIKE GRIPPER FORCE FEEDBACK
-			gripForce=(0.5-gripper[0])*KG;
-		}
-		else
-		{
-
+			gripForce=(0.5-gripper[0])*Kp;
+			break;
+		case 2:
 			// POSITION EXCHANGE GRIPPER FORCE FEEDBACK
 			double tmpGrip=gripper[0];
 			double tmpVel=vgrip[0];
@@ -461,24 +459,15 @@ void HapticData::getGripForce(int gripType)
 			oldFiltGrip[0] = filtGrip;
 			oldVel[0] = velDiff;
 			oldFiltVel[0] = filtVel;
-			/*if(filtGrip<0.2)
-			KG=0;
-			else if(filtGrip<0.4)
-			KG=(filtGrip-0.2)*100;
-			else*/
-			KG=20;
-			/*KG=30;*/
-			//KG=0;
-			/*if (filtGrip>3)
-			filterRdy=false;*/
-			double Kp = grip_force_Kp , Kd = grip_force_Kd;
-			gripForce = Kp*filtGrip+Kd*filtVel;
+			double gripForceP = Kp*filtGrip;
+			double gripForceD = Kd*filtVel;
+			if (gripForceP<0)
+				gripForceP=0;
+			gripForce=gripForceP+gripForceD;
 			cout.setf(ios::fixed,ios::floatfield);
 			cout.precision(3);
 			cout << '\r' << "GF: " <<std::setw(5)<< gripForce << " diff: "<<std::setw(5) << tmpGrip << " raven: "<<std::setw(5)<< ravenData.grasp[0] << flush;
+			break;
 		}
 	}
-	if (gripForce<0)
-		gripForce=0;
-
 }

@@ -13,11 +13,13 @@ public:
 		InitHandPos=0.05;
 		ForceCount=-1;
 		IncreaseForceMaxTime=2.0;
+		gripType=0;
+		enable_gripforce=false;
 	};
 	void moveto();
 	void InitHapticDevice();
 	void SetHapticBaseAngle(double x,double y, double z);
-	void getGripForce(int gripType);
+	void getGripForce();
 	Vector3d position[2];
 	Vector3d velocity[2];
 	double gripper[2];
@@ -31,6 +33,7 @@ public:
 	bool enable_orientation;
 	bool enable_position;
 	bool enable_gripforce;
+	int gripType;
 	bool fullscreen;
 };
 void *HapticsLoop(void* pUserData);

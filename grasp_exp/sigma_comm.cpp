@@ -185,6 +185,18 @@ int Sigma_Comm::Check_UI2MA(int message)
 			else
 				cout << "disabled grip force"<<endl;
 		}
+		if (hapticData.gripType != pUI2Madata->gripType){
+			hapticData.gripType = pUI2Madata->gripType;
+			switch (hapticData.gripType)
+			{
+			case 1:
+				cout << "DaVinci(TM) Style ~Feedback"<<endl;
+				break;
+			case 2:
+				cout << "Position exchange Feedback"<<endl;
+				break;
+			}
+		}
 		if (hapticData.fullscreen != pUI2Madata->fullscreen){
 			hapticData.fullscreen = pUI2Madata->fullscreen;
 			vsScreenSize (hapticData.fullscreen);

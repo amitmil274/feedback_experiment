@@ -142,7 +142,7 @@ ServerNForm::ServerNForm( Q_UINT16 port )
 	connect( gripKdDecreaseButton, SIGNAL(clicked()),	this, SLOT(slotgripKdDecrease()) );
 	connect( gripKdIncreaseButton, SIGNAL(clicked()),	this, SLOT(slotgripKdIncrease()) );
 	connect (checkBox_GRIPPER_FORCE,SIGNAL( stateChanged(int)),this,SLOT(slotEnableGripForce()));
-
+	connect( cB_gripForce, SIGNAL(activated(int)), this, SLOT(slotgripForceStyle(int)) );
 
 	connect( &m_timer,			SIGNAL(timeout()),		this, SLOT(slotUpdateTimer()) );
 	connect( tabWidget,			SIGNAL(currentChanged(QWidget*)), this, SLOT(slotTabChange()) );
@@ -297,7 +297,13 @@ void ServerNForm::slotIPChanged(int index)
 	UI2Madata.UDPaddr = (ip[index][0]<<24) + (ip[index][1]<<16) + (ip[index][2]<<8) + ip[index][3];
 	updateMaster();
 }
-
+void ServerNForm::slotgripForceStyle(int gripType)
+{
+	tabWidget->setFocus();	
+	UI2Madata.gripType=gripType+1;
+	updateMaster();
+	writeLog("Change force style","2");
+}
 void ServerNForm::slotSelectView()
 {
 	tabWidget->setFocus();
@@ -598,6 +604,7 @@ int ServerNForm::EnableMainGUI(int flag)
 		//rB_CM_PP->setEnabled(TRUE);
 		//rB_CM_1D->setEnabled(TRUE);
 		cB_IP->setEnabled(TRUE);
+		cB_gripForce->setEnabled(TRUE);
 		scalePDecreaseButton->setEnabled(TRUE);
 		scalePIncreaseButton->setEnabled(TRUE);
 		scaleGDecreaseButton->setEnabled(TRUE);
@@ -640,6 +647,7 @@ int ServerNForm::EnableMainGUI(int flag)
 		//rB_CM_PP->setEnabled(FALSE);
 		//rB_CM_1D->setEnabled(FALSE);
 		cB_IP->setEnabled(FALSE);
+		cB_gripForce->setEnabled(FALSE);
 		scalePDecreaseButton->setEnabled(FALSE);
 		scalePIncreaseButton->setEnabled(FALSE);
 		scaleGDecreaseButton->setEnabled(FALSE);
@@ -859,6 +867,7 @@ void ServerNForm::slotEnableGripForce()
 	writeLog("ChangeGripForce","2");
 }
 
+
 ///////////////////////////////////////////////////////////////////////
 ////////////////// BEGIN: NETWORKING FUNCTIONS ////////////////////////
 ///////////////////////////////////////////////////////////////////////
@@ -916,6 +925,7 @@ void ServerNForm::slotDataExchangeInit()
 		UI2Madata.scale_grip = SCALE_GRIP_INIT_VALUE; // will be divided by 100
 		UI2Madata.grip_force_Kd = GRIP_FORCE_KD_INIT_VALUE;
 		UI2Madata.grip_force_Kp = GRIP_FORCE_KP_INIT_VALUE;
+		UI2Madata.gripType=0;
 		UI2Madata.checksum = checksumUI2MA(&UI2Madata);
 		UI2Madata.enable_grip=true;
 		UI2Madata.enable_orientation=true;
@@ -992,6 +1002,7 @@ void ServerNForm::updateMaster()
 		data.scale_grip = 0;
 		data.grip_force_Kp=0;
 		data.grip_force_Kd=0;
+		data.gripType=0;
 		data.tick = 0;
 	}
 	data.checksum = checksumUI2MA(&data);

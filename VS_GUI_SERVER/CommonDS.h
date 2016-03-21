@@ -89,7 +89,7 @@ typedef struct{
 	bool enable_position;
 	bool enable_gripforce;
 	double grip_force_Kd, grip_force_Kp;
-
+	int gripType;
 	bool fullscreen;
 	double camOffLX, camOffLY, camOffRX, camOffRY;
 	bool setCamOff;

@@ -85,7 +85,7 @@ static const uint qt_meta_data_ServerNForm[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      43,   14, // methods
+      44,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -107,37 +107,38 @@ static const uint qt_meta_data_ServerNForm[] = {
      182,   12,   12,   12, 0x08,
      203,   12,   12,   12, 0x08,
      224,   12,   12,   12, 0x08,
-     246,   12,   12,   12, 0x08,
-     264,  260,   12,   12, 0x08,
-     289,   12,   12,   12, 0x08,
-     309,   12,   12,   12, 0x08,
-     340,   12,   12,   12, 0x08,
-     377,   12,   12,   12, 0x08,
-     399,   12,   12,   12, 0x08,
-     422,   12,   12,   12, 0x08,
-     440,   12,   12,   12, 0x08,
-     457,   12,   12,   12, 0x08,
-     473,   12,   12,   12, 0x08,
-     490,   12,   12,   12, 0x08,
-     507,   12,   12,   12, 0x08,
-     526,  519,   12,   12, 0x08,
-     544,  519,   12,   12, 0x08,
-     570,  564,   12,   12, 0x08,
-     589,   12,   12,   12, 0x08,
-     617,  611,   12,   12, 0x08,
-     638,  564,   12,   12, 0x08,
-     664,  564,   12,   12, 0x08,
-     689,   12,   12,   12, 0x08,
-     712,   12,   12,   12, 0x08,
-     732,  727,   12,   12, 0x08,
-     755,   12,   12,   12, 0x08,
-     778,   12,   12,   12, 0x08,
-     798,   12,   12,   12, 0x08,
+     252,  246,   12,   12, 0x08,
+     276,   12,   12,   12, 0x08,
+     294,  290,   12,   12, 0x08,
+     319,   12,   12,   12, 0x08,
+     339,   12,   12,   12, 0x08,
+     370,   12,   12,   12, 0x08,
+     407,   12,   12,   12, 0x08,
+     429,   12,   12,   12, 0x08,
+     452,   12,   12,   12, 0x08,
+     470,   12,   12,   12, 0x08,
+     487,   12,   12,   12, 0x08,
+     503,   12,   12,   12, 0x08,
+     520,   12,   12,   12, 0x08,
+     537,   12,   12,   12, 0x08,
+     556,  549,   12,   12, 0x08,
+     574,  549,   12,   12, 0x08,
+     594,  246,   12,   12, 0x08,
+     613,   12,   12,   12, 0x08,
+     641,  635,   12,   12, 0x08,
+     662,  246,   12,   12, 0x08,
+     688,  246,   12,   12, 0x08,
+     713,   12,   12,   12, 0x08,
+     736,   12,   12,   12, 0x08,
+     756,  751,   12,   12, 0x08,
+     779,   12,   12,   12, 0x08,
+     802,   12,   12,   12, 0x08,
      822,   12,   12,   12, 0x08,
-     843,   12,   12,   12, 0x08,
-     862,  860,   12,   12, 0x08,
-     881,   12,   12,   12, 0x08,
-     900,  894,   12,   12, 0x08,
+     846,   12,   12,   12, 0x08,
+     867,   12,   12,   12, 0x08,
+     886,  884,   12,   12, 0x08,
+     905,   12,   12,   12, 0x08,
+     924,  918,   12,   12, 0x08,
 
        0        // eod
 };
@@ -149,6 +150,7 @@ static const char qt_meta_stringdata_ServerNForm[] = {
     "slotGScaleIncrease()\0slotgripKpDecrease()\0"
     "slotgripKpIncrease()\0slotgripKdDecrease()\0"
     "slotgripKdIncrease()\0slotEnableGripForce()\0"
+    "index\0slotgripForceStyle(int)\0"
     "slotZeroXYZ()\0cnt\0updateGUIFromMaster(int)\0"
     "slotGUInewConnect()\0slotGUIupdateStopButtonImage()\0"
     "slotGUIupdateConnectionButtonImage()\0"
@@ -157,7 +159,7 @@ static const char qt_meta_stringdata_ServerNForm[] = {
     "slotTabChange()\0slotCheckLogin()\0"
     "slotSelectView()\0slotDCNew()\0toggle\0"
     "slotDCStart(bool)\0slotDCDictate(bool)\0"
-    "index\0slotIPChanged(int)\0slotCamAngleChanged()\0"
+    "slotIPChanged(int)\0slotCamAngleChanged()\0"
     "check\0slotITPCheckBox(int)\0"
     "slotRightToolChanged(int)\0"
     "slotLeftToolChanged(int)\0"
@@ -187,37 +189,38 @@ void ServerNForm::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 9: _t->slotgripKdDecrease(); break;
         case 10: _t->slotgripKdIncrease(); break;
         case 11: _t->slotEnableGripForce(); break;
-        case 12: _t->slotZeroXYZ(); break;
-        case 13: _t->updateGUIFromMaster((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 14: _t->slotGUInewConnect(); break;
-        case 15: _t->slotGUIupdateStopButtonImage(); break;
-        case 16: _t->slotGUIupdateConnectionButtonImage(); break;
-        case 17: _t->slotReadClientatGUI(); break;
-        case 18: _t->slotDataExchangeInit(); break;
-        case 19: _t->slotUpdateTimer(); break;
-        case 20: _t->slotZeroButton(); break;
-        case 21: _t->slotTabChange(); break;
-        case 22: _t->slotCheckLogin(); break;
-        case 23: _t->slotSelectView(); break;
-        case 24: _t->slotDCNew(); break;
-        case 25: _t->slotDCStart((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 26: _t->slotDCDictate((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 27: _t->slotIPChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 28: _t->slotCamAngleChanged(); break;
-        case 29: _t->slotITPCheckBox((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 30: _t->slotRightToolChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 31: _t->slotLeftToolChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 32: _t->slotKeyPadAuthorized(); break;
-        case 33: _t->updateMaster(); break;
-        case 34: _t->sendTCP((*reinterpret_cast< stUI2MA_DATA*(*)>(_a[1]))); break;
-        case 35: _t->slotDisconnectMaster(); break;
-        case 36: _t->slotEnableGripper(); break;
-        case 37: _t->slotEnableOrientation(); break;
-        case 38: _t->slotEnablePosition(); break;
-        case 39: _t->slotFullscreen(); break;
-        case 40: _t->slotHttpRead((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 41: _t->slotCamOff(); break;
-        case 42: _t->closeEvent((*reinterpret_cast< QCloseEvent*(*)>(_a[1]))); break;
+        case 12: _t->slotgripForceStyle((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 13: _t->slotZeroXYZ(); break;
+        case 14: _t->updateGUIFromMaster((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 15: _t->slotGUInewConnect(); break;
+        case 16: _t->slotGUIupdateStopButtonImage(); break;
+        case 17: _t->slotGUIupdateConnectionButtonImage(); break;
+        case 18: _t->slotReadClientatGUI(); break;
+        case 19: _t->slotDataExchangeInit(); break;
+        case 20: _t->slotUpdateTimer(); break;
+        case 21: _t->slotZeroButton(); break;
+        case 22: _t->slotTabChange(); break;
+        case 23: _t->slotCheckLogin(); break;
+        case 24: _t->slotSelectView(); break;
+        case 25: _t->slotDCNew(); break;
+        case 26: _t->slotDCStart((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 27: _t->slotDCDictate((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 28: _t->slotIPChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 29: _t->slotCamAngleChanged(); break;
+        case 30: _t->slotITPCheckBox((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 31: _t->slotRightToolChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 32: _t->slotLeftToolChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 33: _t->slotKeyPadAuthorized(); break;
+        case 34: _t->updateMaster(); break;
+        case 35: _t->sendTCP((*reinterpret_cast< stUI2MA_DATA*(*)>(_a[1]))); break;
+        case 36: _t->slotDisconnectMaster(); break;
+        case 37: _t->slotEnableGripper(); break;
+        case 38: _t->slotEnableOrientation(); break;
+        case 39: _t->slotEnablePosition(); break;
+        case 40: _t->slotFullscreen(); break;
+        case 41: _t->slotHttpRead((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 42: _t->slotCamOff(); break;
+        case 43: _t->closeEvent((*reinterpret_cast< QCloseEvent*(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -255,9 +258,9 @@ int ServerNForm::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 43)
+        if (_id < 44)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 43;
+        _id -= 44;
     }
     return _id;
 }

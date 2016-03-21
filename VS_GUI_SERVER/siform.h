@@ -88,6 +88,9 @@ private slots:
 	void slotgripKdDecrease();
     void slotgripKdIncrease();
 	void slotEnableGripForce();
+	void slotgripForceStyle(int index);
+
+
 	void slotZeroXYZ();
 
 	void updateGUIFromMaster(int cnt);

@@ -109,13 +109,14 @@ public:
     QPushButton *gripKdIncreaseButton;
     QLineEdit *gripKdLineEdit;
     QCheckBox *checkBox_GRIPPER_FORCE;
+    QComboBox *cB_gripForce;
     QWidget *tab_2;
 
     void setupUi(QDialog *SIForm)
     {
         if (SIForm->objectName().isEmpty())
             SIForm->setObjectName(QString::fromUtf8("SIForm"));
-        SIForm->resize(1094, 717);
+        SIForm->resize(1072, 717);
         tabWidget = new QTabWidget(SIForm);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setGeometry(QRect(70, 30, 1001, 671));
@@ -481,6 +482,11 @@ public:
         checkBox_GRIPPER_FORCE->setGeometry(QRect(650, 360, 311, 20));
         checkBox_GRIPPER_FORCE->setFont(font5);
         checkBox_GRIPPER_FORCE->setChecked(true);
+        cB_gripForce = new QComboBox(tab2);
+        cB_gripForce->setObjectName(QString::fromUtf8("cB_gripForce"));
+        cB_gripForce->setGeometry(QRect(650, 320, 271, 31));
+        cB_gripForce->setFont(font1);
+        cB_gripForce->setFocusPolicy(Qt::NoFocus);
         tabWidget->addTab(tab2, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
@@ -489,6 +495,7 @@ public:
         retranslateUi(SIForm);
 
         tabWidget->setCurrentIndex(1);
+        cB_gripForce->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(SIForm);
@@ -549,6 +556,11 @@ public:
         gripKdDecreaseButton->setText(QApplication::translate("SIForm", "<<", 0, QApplication::UnicodeUTF8));
         gripKdIncreaseButton->setText(QApplication::translate("SIForm", ">>", 0, QApplication::UnicodeUTF8));
         checkBox_GRIPPER_FORCE->setText(QApplication::translate("SIForm", "ENABLE GRIPPER FORCE FEEDBACK", 0, QApplication::UnicodeUTF8));
+        cB_gripForce->clear();
+        cB_gripForce->insertItems(0, QStringList()
+         << QApplication::translate("SIForm", "Da Vinci Like", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("SIForm", "Position Exchange", 0, QApplication::UnicodeUTF8)
+        );
         tabWidget->setTabText(tabWidget->indexOf(tab2), QApplication::translate("SIForm", "Engineer", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("SIForm", "Page", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
