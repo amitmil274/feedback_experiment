@@ -23,7 +23,7 @@ using namespace Eigen;
 
 HapticData hapticData;
 extern v_struct ravenData;
-extern FrameRateCounter FPS;
+extern FrameRateCounter FPS_vision, FPS_haptic;
 extern FileHandle filemaster;
 extern FileHandle fileslave;
 extern Protocol protocol;
@@ -166,6 +166,9 @@ void* HapticsLoop(void* pUserData)
 		xform[0]  << r[0][0], r[0][1], r[0][2],
 			r[1][0], r[1][1], r[1][2],
 			r[2][0], r[2][1], r[2][2];
+		xform[0]  << r[0][0], r[1][0], r[2][0],
+			r[0][1], r[1][1], r[2][1],
+			r[0][2], r[1][2], r[2][2];
 
 		Matrix3d sigma2ITP;
 		if (hapticData.enable_orientation)
@@ -228,7 +231,7 @@ void* HapticsLoop(void* pUserData)
 			if (hapticData.enable_orientation)
 				qIncr[0]=qPrev[0].inverse() * qCurr[0];
 			else
-				qIncr[0]=q_identity;
+				qIncr[0]=qCurr[0];
 			//qIncr[0]=qCurr[0]; //TRYING TO IMPLEMENT ABSOLUTE
 			if (hapticData.enable_gripper)
 			{
@@ -264,9 +267,11 @@ void* HapticsLoop(void* pUserData)
 		int grip2[2];
 		grip2[0]=(int)Gripper[0];
 		bool rcvudp;
-		int fps = FPS.GetFrameRate();
+		int fps_vision = FPS_vision.GetFrameRate();
+		FPS_haptic.NewFrame();
+		int fps_haptic = FPS_haptic.GetFrameRate();
 		if(servo%100 == 1) {
-			comm.Update_MA2UI(dPosition, rl2sui, servo, graspStatus, status, currentobject, nextobject, trialnumber,fps);			// Update SUI data
+			comm.Update_MA2UI(dPosition, rl2sui, servo, graspStatus, status, currentobject, nextobject, trialnumber,fps_vision,fps_haptic);			// Update SUI data
 			comm.Send_TCP();
 			//cout<<rl2sui;
 		}
@@ -397,26 +402,32 @@ double oldVel[7];
 double oldFiltVel[7];
 double filtVel=0;
 float B[] = {0.0002196,  0.0006588,  0.0006588,  0.0002196};
+//float B[]= {0.00002915, 0.00008744 , 0.00008744, 0.00002915};
 float A[] = {1.0000,   2.7488, -2.5282,  0.7776};
+//float A[] = {1.0000,   2.8744, -2.7565,  0.8819};
 int filtSize=4;
 void HapticData::getGripForce()
 {
 	double Kp = grip_force_Kp , Kd = grip_force_Kd;
+	double ref1=0.52,ref2=0.18,gf1=0,gf2=0;
 	gripForce=0;
 	if (enable_gripforce)
 	{
 		switch (gripType)
 		{
 		case 1:
-			if(gripper[0]<0.1)
-				Kp=Kp;
-			else if(gripper[0]<0.2)
-				Kp=(Kp/10)/gripper[0];
-			else
-				Kp=Kp/2;
+			
+			if(gripper[0]<ref1)
+				gf1=(ref1-gripper[0])*Kp/4;
+			/*else if(gripper[0]<0.2)
+				Kp=(Kp/10)/gripper[0];*/
+			if(gripper[0]<ref2)
+				gf2=(ref2-gripper[0])*Kp;
+				//Kp=Kp/4;
 
 			// END OF DAVINCI LIKE GRIPPER FORCE FEEDBACK
-			gripForce=(0.5-gripper[0])*Kp;
+			//gripForce=(0.5-gripper[0])*Kp;
+			gripForce=gf1+gf2;
 			break;
 		case 2:
 			// POSITION EXCHANGE GRIPPER FORCE FEEDBACK
@@ -459,15 +470,18 @@ void HapticData::getGripForce()
 			oldFiltGrip[0] = filtGrip;
 			oldVel[0] = velDiff;
 			oldFiltVel[0] = filtVel;
+			grip_diff_filt[0]=filtGrip;
+			vgrip_filt[0]=filtVel;
+			orientation[0][0]=gripDiff;
 			double gripForceP = Kp*filtGrip;
-			double gripForceD = Kd*filtVel;
+			double gripForceD = -Kd*vgrip[0];
 			if (gripForceP<0)
 				gripForceP=0;
 			gripForce=gripForceP+gripForceD;
-			cout.setf(ios::fixed,ios::floatfield);
+		/*	cout.setf(ios::fixed,ios::floatfield);
 			cout.precision(3);
 			cout << '\r' << "GF: " <<std::setw(5)<< gripForce << " diff: "<<std::setw(5) << tmpGrip << " raven: "<<std::setw(5)<< ravenData.grasp[0] << flush;
-			break;
+			break;*/
 		}
 	}
 }

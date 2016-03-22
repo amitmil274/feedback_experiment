@@ -25,7 +25,7 @@ public:
 
 	// ** TCP Commnucation to GUI  **
 	int Initialize_TCP_GUI();
-	int Update_MA2UI(Vector3d pos[2],int rl, unsigned int servo, int graspStatus, int status, int currentobject, int nextobject, int trialnumber,int fps);
+	int Update_MA2UI(Vector3d pos[2],int rl, unsigned int servo, int graspStatus, int status, int currentobject, int nextobject, int trialnumber,int fps_vision, int fps_haptic);
 	int Check_UI2MA(int message);
 	bool Check_Flag(int mode);
 	void Set_Flag(int value,int mode);

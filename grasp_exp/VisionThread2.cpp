@@ -16,7 +16,7 @@ using namespace FlyCapture2;
 using namespace std;
 static const unsigned int sk_maxNumTextures = 36;
 GLuint m_imageTextures[sk_maxNumTextures];
-FrameRateCounter FPS;
+FrameRateCounter FPS_vision, FPS_haptic;
 Camera** camera = new Camera*[2];
 PGRGuid guid[2];
 Format7ImageSettings f7set[2] ;
@@ -313,7 +313,7 @@ void GlutDisplayFunc()
 		glPopMatrix();
 	}
 	glutSwapBuffers();
-	FPS.NewFrame();
+	FPS_vision.NewFrame();
 }
 void* visionrun2(void*)
 {

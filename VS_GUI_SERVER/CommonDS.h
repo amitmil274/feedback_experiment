@@ -52,7 +52,7 @@
 #define SCALE_GRIP_INIT_VALUE 5	
 // GRIP FORCE
 #define GRIP_FORCE_KP_MAX 	200 	
-#define GRIP_FORCE_KD_MAX 	1000
+#define GRIP_FORCE_KD_MAX 	100
 #define GRIP_FORCE_KP_INIT_VALUE 10	
 #define GRIP_FORCE_KD_INIT_VALUE 1	
 
@@ -68,7 +68,8 @@ typedef struct{
 	int trialnumber;
 	int expstatus;
 	int graspstatus;
-	double fps;
+	int fps_vision;
+	int fps_haptic;
 }stMA2UI_DATA;
 
 typedef struct{

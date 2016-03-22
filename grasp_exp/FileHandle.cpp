@@ -55,7 +55,7 @@ void FileHandle::OpenDataFile()
 
 	if(Data_file_master)
 	{
-		fprintf(Data_file_master, "Time Px Py Pz Vx Vy Vz GripRad VGripRad GripGap VGripGap Ox Oy Oz\n");
+		fprintf(Data_file_master, "Time Px Py Pz Vx Vy Vz GripRad VGripRad DiffFilt VFilt Ox Oy Oz\n");
 	}
 	if(Data_file_slave)
 	{
@@ -83,8 +83,8 @@ void FileHandle::SaveDataFile(double time)
 	SaveVal_master[0][5] = hapticData.velocity[0][2];
 	SaveVal_master[0][6] = hapticData.gripper[0];
 	SaveVal_master[0][7] = hapticData.vgrip[0];
-	SaveVal_master[0][8] = hapticData.gripper[1];
-	SaveVal_master[0][9] = hapticData.vgrip[1];
+	SaveVal_master[0][8] = hapticData.grip_diff_filt[0];
+	SaveVal_master[0][9] = hapticData.vgrip_filt[0];
 	SaveVal_master[0][10] = hapticData.orientation[0][0];
 	SaveVal_master[0][11] = hapticData.orientation[0][1];  
 	SaveVal_master[0][12] = hapticData.orientation[0][2];

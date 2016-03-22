@@ -24,6 +24,8 @@ public:
 	Vector3d velocity[2];
 	double gripper[2];
 	double vgrip[2];
+	double grip_diff_filt[2];
+	double vgrip_filt[2];
 	double gripForce;
 	Vector3d orientation[2];
 	float InitHandPos;
@@ -33,6 +35,7 @@ public:
 	bool enable_orientation;
 	bool enable_position;
 	bool enable_gripforce;
+
 	int gripType;
 	bool fullscreen;
 };

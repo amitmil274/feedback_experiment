@@ -103,7 +103,7 @@ bool Sigma_Comm::Check_Flag(int mode)
 }
 
 
-int Sigma_Comm::Update_MA2UI(Vector3d pos[2],int rl, unsigned int servo,  int graspStatus, int status, int currentobject, int nextobject, int trialnumber, int fps)
+int Sigma_Comm::Update_MA2UI(Vector3d pos[2],int rl, unsigned int servo,  int graspStatus, int status, int currentobject, int nextobject, int trialnumber, int fps_vision,int fps_haptic)
 {
 	pMa2UIdata->delx[0] = int(round(pos[OMNI1][0]*THOUSAND));
 	pMa2UIdata->dely[0] = int(round(pos[OMNI1][1]*THOUSAND));
@@ -119,7 +119,8 @@ int Sigma_Comm::Update_MA2UI(Vector3d pos[2],int rl, unsigned int servo,  int gr
 	pMa2UIdata->tick = servo; 
 	pMa2UIdata->runlevel = rl;
 	pMa2UIdata->checksum = pMa2UIdata->delx[0] +  pMa2UIdata->dely[0] +  pMa2UIdata->delz[0] +  pMa2UIdata->runlevel + (int)pMa2UIdata->tick;   
-	pMa2UIdata->fps = fps;
+	pMa2UIdata->fps_vision = fps_vision;
+	pMa2UIdata->fps_haptic = fps_haptic;
 	return 1;
 }
 
@@ -136,7 +137,7 @@ int Sigma_Comm::Check_UI2MA(int message)
 		scale_pos= (double)pUI2Madata->scale_pos/100.0;
 		scale_grip= (double)pUI2Madata->scale_grip;
 		grip_force_Kp=(double)pUI2Madata->grip_force_Kp;
-		grip_force_Kd=(double)pUI2Madata->grip_force_Kd/1000;
+		grip_force_Kd=(double)pUI2Madata->grip_force_Kd/100;
 
 		// Set camera angle 1
 		int count=0;
@@ -262,7 +263,7 @@ int Sigma_Comm::Initialize_TCP_GUI()
 	zero_pos[0] << 0,0,0;
 	zero_pos[1] << 0,0,0;
 
-	Update_MA2UI(zero_pos, 0, 0,0,0,0,0,0,0);
+	Update_MA2UI(zero_pos, 0, 0,0,0,0,0,0,0,0);
 
 	Send_TCP();
 	Recv_TCP();

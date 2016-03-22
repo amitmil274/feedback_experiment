@@ -67,7 +67,7 @@ public:
     QCheckBox *checkBox_ORI;
     QCheckBox *checkBox_POS;
     QCheckBox *checkBox_fullscreen;
-    QLCDNumber *lcdFPS;
+    QLCDNumber *lcdFPS_vision;
     QGroupBox *groupBox_5;
     QDoubleSpinBox *zeroX;
     QDoubleSpinBox *zeroY;
@@ -76,6 +76,9 @@ public:
     QLabel *label_22;
     QLabel *label_23;
     QPushButton *zerobutton;
+    QLCDNumber *lcdFPS_haptic;
+    QPushButton *connectionButton_5;
+    QPushButton *connectionButton_6;
     QWidget *tab2;
     QLabel *label_4;
     QLCDNumber *lCDNumber2;
@@ -302,10 +305,10 @@ public:
         checkBox_fullscreen->setGeometry(QRect(20, 140, 141, 16));
         checkBox_fullscreen->setFont(font5);
         checkBox_fullscreen->setChecked(false);
-        lcdFPS = new QLCDNumber(tab);
-        lcdFPS->setObjectName(QString::fromUtf8("lcdFPS"));
-        lcdFPS->setGeometry(QRect(810, 300, 151, 41));
-        lcdFPS->setSmallDecimalPoint(false);
+        lcdFPS_vision = new QLCDNumber(tab);
+        lcdFPS_vision->setObjectName(QString::fromUtf8("lcdFPS_vision"));
+        lcdFPS_vision->setGeometry(QRect(820, 300, 151, 41));
+        lcdFPS_vision->setSmallDecimalPoint(false);
         groupBox_5 = new QGroupBox(tab);
         groupBox_5->setObjectName(QString::fromUtf8("groupBox_5"));
         groupBox_5->setGeometry(QRect(50, 390, 201, 211));
@@ -337,6 +340,24 @@ public:
         zerobutton = new QPushButton(tab);
         zerobutton->setObjectName(QString::fromUtf8("zerobutton"));
         zerobutton->setGeometry(QRect(270, 550, 100, 70));
+        lcdFPS_haptic = new QLCDNumber(tab);
+        lcdFPS_haptic->setObjectName(QString::fromUtf8("lcdFPS_haptic"));
+        lcdFPS_haptic->setGeometry(QRect(820, 380, 151, 41));
+        lcdFPS_haptic->setSmallDecimalPoint(false);
+        connectionButton_5 = new QPushButton(tab);
+        connectionButton_5->setObjectName(QString::fromUtf8("connectionButton_5"));
+        connectionButton_5->setGeometry(QRect(830, 280, 141, 21));
+        connectionButton_5->setFont(font1);
+        connectionButton_5->setAutoFillBackground(true);
+        connectionButton_5->setIconSize(QSize(190, 100));
+        connectionButton_5->setFlat(true);
+        connectionButton_6 = new QPushButton(tab);
+        connectionButton_6->setObjectName(QString::fromUtf8("connectionButton_6"));
+        connectionButton_6->setGeometry(QRect(830, 350, 141, 31));
+        connectionButton_6->setFont(font1);
+        connectionButton_6->setAutoFillBackground(true);
+        connectionButton_6->setIconSize(QSize(190, 100));
+        connectionButton_6->setFlat(true);
         tabWidget->addTab(tab, QString());
         tab2 = new QWidget();
         tab2->setObjectName(QString::fromUtf8("tab2"));
@@ -461,7 +482,7 @@ public:
         gripKpLineEdit->setGeometry(QRect(110, 33, 110, 61));
         gripKpLineEdit->setFocusPolicy(Qt::NoFocus);
         gripKpLineEdit->setAlignment(Qt::AlignHCenter);
-        gripKpLineEdit->setReadOnly(true);
+        gripKpLineEdit->setReadOnly(false);
         groupBox_gripKd = new QGroupBox(tab2);
         groupBox_gripKd->setObjectName(QString::fromUtf8("groupBox_gripKd"));
         groupBox_gripKd->setGeometry(QRect(640, 500, 330, 105));
@@ -476,7 +497,7 @@ public:
         gripKdLineEdit->setGeometry(QRect(110, 33, 110, 61));
         gripKdLineEdit->setFocusPolicy(Qt::NoFocus);
         gripKdLineEdit->setAlignment(Qt::AlignHCenter);
-        gripKdLineEdit->setReadOnly(true);
+        gripKdLineEdit->setReadOnly(false);
         checkBox_GRIPPER_FORCE = new QCheckBox(tab2);
         checkBox_GRIPPER_FORCE->setObjectName(QString::fromUtf8("checkBox_GRIPPER_FORCE"));
         checkBox_GRIPPER_FORCE->setGeometry(QRect(650, 360, 311, 20));
@@ -494,7 +515,7 @@ public:
 
         retranslateUi(SIForm);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
         cB_gripForce->setCurrentIndex(0);
 
 
@@ -535,6 +556,8 @@ public:
         label_22->setText(QApplication::translate("SIForm", "Y", 0, QApplication::UnicodeUTF8));
         label_23->setText(QApplication::translate("SIForm", "Z", 0, QApplication::UnicodeUTF8));
         zerobutton->setText(QApplication::translate("SIForm", "ZERO", 0, QApplication::UnicodeUTF8));
+        connectionButton_5->setText(QApplication::translate("SIForm", "vision rate", 0, QApplication::UnicodeUTF8));
+        connectionButton_6->setText(QApplication::translate("SIForm", "haptic rate", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("SIForm", "Surgeon", 0, QApplication::UnicodeUTF8));
         label_4->setText(QApplication::translate("SIForm", "IP Address", 0, QApplication::UnicodeUTF8));
         A_okButton->setText(QApplication::translate("SIForm", "CLOSE GUI", 0, QApplication::UnicodeUTF8));

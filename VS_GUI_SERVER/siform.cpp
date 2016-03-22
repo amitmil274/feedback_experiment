@@ -706,7 +706,8 @@ void ServerNForm::GUIupdateLCDNumber()
 	lcdcurrent->display(Ma2UIdata.currentobject);
 	lcdnext->display(Ma2UIdata.nextobject);
 	lcdtrial->display(Ma2UIdata.trialnumber);
-	lcdFPS->display(Ma2UIdata.fps);
+	lcdFPS_vision->display(Ma2UIdata.fps_vision);
+	lcdFPS_haptic->display(Ma2UIdata.fps_haptic);
 	switch (Ma2UIdata.expstatus)
 	{
 	case 0: 
@@ -839,7 +840,7 @@ void ServerNForm::slotgripKpIncrease()
 void ServerNForm::slotgripKdDecrease() 
 {
 	tabWidget->setFocus();
-	UI2Madata.grip_force_Kd -= 1;
+	UI2Madata.grip_force_Kd -= 10;
 	if(UI2Madata.grip_force_Kd < 0)
 		UI2Madata.grip_force_Kd = 0;
 	gripKdLineEdit->setText(QString("%1").arg((double)UI2Madata.grip_force_Kd/(double)GRIP_FORCE_KD_MAX));
@@ -849,9 +850,9 @@ void ServerNForm::slotgripKdDecrease()
 void ServerNForm::slotgripKdIncrease() 
 {
 	tabWidget->setFocus();
-	UI2Madata.grip_force_Kd += 1;
-	if(UI2Madata.grip_force_Kd > GRIP_FORCE_KD_MAX)
-		UI2Madata.grip_force_Kd = GRIP_FORCE_KD_MAX;
+	UI2Madata.grip_force_Kd += 10;
+	if(UI2Madata.grip_force_Kd > GRIP_FORCE_KD_MAX*10)
+		UI2Madata.grip_force_Kd = GRIP_FORCE_KD_MAX*10;
 	gripKdLineEdit->setText(QString("%1").arg((double)UI2Madata.grip_force_Kd/(double)GRIP_FORCE_KD_MAX));
 
 	updateMaster();
@@ -952,7 +953,7 @@ void ServerNForm::slotDataExchangeInit()
 	infoText->append( tr("Initial data was sended %1\n").arg(UI2Madata.flag01));
 	scalePLineEdit->setText(QString("%1").arg((double)UI2Madata.scale_pos/(double)SCALE_POS_MAX));
 	scaleGLineEdit->setText(QString("%1").arg((double)UI2Madata.scale_grip));
-	gripKpLineEdit->setText(QString("%1").arg((double)UI2Madata.grip_force_Kp/(double)SCALE_POS_MAX));
+	gripKpLineEdit->setText(QString("%1").arg((double)UI2Madata.grip_force_Kp));
 	gripKdLineEdit->setText(QString("%1").arg((double)UI2Madata.grip_force_Kd/(double)GRIP_FORCE_KD_MAX));
 
 	updateMaster(); // Important: reply to init packet with initial state.
